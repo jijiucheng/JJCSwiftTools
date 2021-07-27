@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7DC649E926B00957001182FB /* JJCSwiftTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DC649E726B00957001182FB /* JJCSwiftTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DC64A3826B01EEB001182FB /* JJCSwiftTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DC64A3626B01EEB001182FB /* JJCSwiftTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7DC649E426B00957001182FB /* JJCSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JJCSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DC649E726B00957001182FB /* JJCSwiftTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJCSwiftTools.h; sourceTree = "<group>"; };
-		7DC649E826B00957001182FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DC64A3326B01EEB001182FB /* JJCSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JJCSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DC64A3626B01EEB001182FB /* JJCSwiftTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJCSwiftTools.h; sourceTree = "<group>"; };
+		7DC64A3726B01EEB001182FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7DC649E126B00957001182FB /* Frameworks */ = {
+		7DC64A3026B01EEB001182FB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -27,77 +27,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7DC649DA26B00957001182FB = {
+		7DC64A2926B01EEB001182FB = {
 			isa = PBXGroup;
 			children = (
-				7DC649E626B00957001182FB /* Source */,
-				7DC649E526B00957001182FB /* Products */,
+				7DC64A3526B01EEB001182FB /* Source */,
+				7DC64A3426B01EEB001182FB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		7DC649E526B00957001182FB /* Products */ = {
+		7DC64A3426B01EEB001182FB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7DC649E426B00957001182FB /* JJCSwiftTools.framework */,
+				7DC64A3326B01EEB001182FB /* JJCSwiftTools.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7DC649E626B00957001182FB /* Source */ = {
+		7DC64A3526B01EEB001182FB /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				7DC649F126B009B1001182FB /* General */,
-				7DC649F226B009D2001182FB /* Extension */,
-				7DC649F326B009DC001182FB /* Widget */,
-				7DC649E826B00957001182FB /* Info.plist */,
+				7DC64A3F26B01F0A001182FB /* General */,
+				7DC64A3726B01EEB001182FB /* Info.plist */,
 			);
 			path = Source;
 			sourceTree = "<group>";
 		};
-		7DC649F126B009B1001182FB /* General */ = {
+		7DC64A3F26B01F0A001182FB /* General */ = {
 			isa = PBXGroup;
 			children = (
-				7DC649E726B00957001182FB /* JJCSwiftTools.h */,
+				7DC64A3626B01EEB001182FB /* JJCSwiftTools.h */,
 			);
 			path = General;
-			sourceTree = "<group>";
-		};
-		7DC649F226B009D2001182FB /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		7DC649F326B009DC001182FB /* Widget */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Widget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		7DC649DF26B00957001182FB /* Headers */ = {
+		7DC64A2E26B01EEB001182FB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DC649E926B00957001182FB /* JJCSwiftTools.h in Headers */,
+				7DC64A3826B01EEB001182FB /* JJCSwiftTools.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7DC649E326B00957001182FB /* JJCSwiftTools */ = {
+		7DC64A3226B01EEB001182FB /* JJCSwiftTools */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7DC649EC26B00957001182FB /* Build configuration list for PBXNativeTarget "JJCSwiftTools" */;
+			buildConfigurationList = 7DC64A3B26B01EEB001182FB /* Build configuration list for PBXNativeTarget "JJCSwiftTools" */;
 			buildPhases = (
-				7DC649DF26B00957001182FB /* Headers */,
-				7DC649E026B00957001182FB /* Sources */,
-				7DC649E126B00957001182FB /* Frameworks */,
-				7DC649E226B00957001182FB /* Resources */,
+				7DC64A2E26B01EEB001182FB /* Headers */,
+				7DC64A2F26B01EEB001182FB /* Sources */,
+				7DC64A3026B01EEB001182FB /* Frameworks */,
+				7DC64A3126B01EEB001182FB /* Resources */,
 			);
 			buildRules = (
 			);
@@ -105,23 +89,23 @@
 			);
 			name = JJCSwiftTools;
 			productName = JJCSwiftTools;
-			productReference = 7DC649E426B00957001182FB /* JJCSwiftTools.framework */;
+			productReference = 7DC64A3326B01EEB001182FB /* JJCSwiftTools.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		7DC649DB26B00957001182FB /* Project object */ = {
+		7DC64A2A26B01EEB001182FB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
-					7DC649E326B00957001182FB = {
+					7DC64A3226B01EEB001182FB = {
 						CreatedOnToolsVersion = 12.3;
 					};
 				};
 			};
-			buildConfigurationList = 7DC649DE26B00957001182FB /* Build configuration list for PBXProject "JJCSwiftTools" */;
+			buildConfigurationList = 7DC64A2D26B01EEB001182FB /* Build configuration list for PBXProject "JJCSwiftTools" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -129,18 +113,18 @@
 				en,
 				Base,
 			);
-			mainGroup = 7DC649DA26B00957001182FB;
-			productRefGroup = 7DC649E526B00957001182FB /* Products */;
+			mainGroup = 7DC64A2926B01EEB001182FB;
+			productRefGroup = 7DC64A3426B01EEB001182FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7DC649E326B00957001182FB /* JJCSwiftTools */,
+				7DC64A3226B01EEB001182FB /* JJCSwiftTools */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7DC649E226B00957001182FB /* Resources */ = {
+		7DC64A3126B01EEB001182FB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -150,7 +134,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7DC649E026B00957001182FB /* Sources */ = {
+		7DC64A2F26B01EEB001182FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -160,7 +144,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		7DC649EA26B00957001182FB /* Debug */ = {
+		7DC64A3926B01EEB001182FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -212,7 +196,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -224,7 +208,7 @@
 			};
 			name = Debug;
 		};
-		7DC649EB26B00957001182FB /* Release */ = {
+		7DC64A3A26B01EEB001182FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -270,7 +254,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -282,7 +266,7 @@
 			};
 			name = Release;
 		};
-		7DC649ED26B00957001182FB /* Debug */ = {
+		7DC64A3C26B01EEB001182FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -308,7 +292,7 @@
 			};
 			name = Debug;
 		};
-		7DC649EE26B00957001182FB /* Release */ = {
+		7DC64A3D26B01EEB001182FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -337,25 +321,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7DC649DE26B00957001182FB /* Build configuration list for PBXProject "JJCSwiftTools" */ = {
+		7DC64A2D26B01EEB001182FB /* Build configuration list for PBXProject "JJCSwiftTools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7DC649EA26B00957001182FB /* Debug */,
-				7DC649EB26B00957001182FB /* Release */,
+				7DC64A3926B01EEB001182FB /* Debug */,
+				7DC64A3A26B01EEB001182FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7DC649EC26B00957001182FB /* Build configuration list for PBXNativeTarget "JJCSwiftTools" */ = {
+		7DC64A3B26B01EEB001182FB /* Build configuration list for PBXNativeTarget "JJCSwiftTools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7DC649ED26B00957001182FB /* Debug */,
-				7DC649EE26B00957001182FB /* Release */,
+				7DC64A3C26B01EEB001182FB /* Debug */,
+				7DC64A3D26B01EEB001182FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 7DC649DB26B00957001182FB /* Project object */;
+	rootObject = 7DC64A2A26B01EEB001182FB /* Project object */;
 }
