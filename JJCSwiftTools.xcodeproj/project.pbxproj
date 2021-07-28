@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		7DC64A3826B01EEB001182FB /* JJCSwiftTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DC64A3626B01EEB001182FB /* JJCSwiftTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DC64A7326B02153001182FB /* UIButton+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A7226B02153001182FB /* UIButton+JJCAPI.swift */; };
+		7DC64A7726B0F524001182FB /* UISearchBar+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A7626B0F524001182FB /* UISearchBar+JJCAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7DC64A3326B01EEB001182FB /* JJCSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JJCSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC64A3626B01EEB001182FB /* JJCSwiftTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJCSwiftTools.h; sourceTree = "<group>"; };
 		7DC64A3726B01EEB001182FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DC64A7226B02153001182FB /* UIButton+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+JJCAPI.swift"; sourceTree = "<group>"; };
+		7DC64A7626B0F524001182FB /* UISearchBar+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+JJCAPI.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				7DC64A3F26B01F0A001182FB /* General */,
+				7DC64A7126B0211F001182FB /* Extension */,
 				7DC64A3726B01EEB001182FB /* Info.plist */,
 			);
 			path = Source;
@@ -58,6 +63,15 @@
 				7DC64A3626B01EEB001182FB /* JJCSwiftTools.h */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		7DC64A7126B0211F001182FB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7DC64A7226B02153001182FB /* UIButton+JJCAPI.swift */,
+				7DC64A7626B0F524001182FB /* UISearchBar+JJCAPI.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,6 +116,7 @@
 				TargetAttributes = {
 					7DC64A3226B01EEB001182FB = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
 					};
 				};
 			};
@@ -138,6 +153,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DC64A7726B0F524001182FB /* UISearchBar+JJCAPI.swift in Sources */,
+				7DC64A7326B02153001182FB /* UIButton+JJCAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +286,7 @@
 		7DC64A3C26B01EEB001182FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 001;
 				DEFINES_MODULE = YES;
@@ -287,6 +305,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jijiucheng.JJCSwiftTools;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -295,6 +314,7 @@
 		7DC64A3D26B01EEB001182FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 001;
 				DEFINES_MODULE = YES;
