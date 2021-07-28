@@ -13,18 +13,18 @@
 		7DC64A5826B01FF3001182FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC64A5626B01FF3001182FB /* Main.storyboard */; };
 		7DC64A5A26B01FF6001182FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DC64A5926B01FF6001182FB /* Assets.xcassets */; };
 		7DC64A5D26B01FF6001182FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC64A5B26B01FF6001182FB /* LaunchScreen.storyboard */; };
-		7DC64A6E26B02111001182FB /* JJCSwiftTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC64A6D26B02111001182FB /* JJCSwiftTools.framework */; };
-		7DC64A6F26B02111001182FB /* JJCSwiftTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC64A6D26B02111001182FB /* JJCSwiftTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7DC64AA426B11CA3001182FB /* JJCSwiftTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC64AA326B11CA3001182FB /* JJCSwiftTools.framework */; };
+		7DC64AA526B11CA3001182FB /* JJCSwiftTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC64AA326B11CA3001182FB /* JJCSwiftTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7DC64A7026B02111001182FB /* Embed Frameworks */ = {
+		7DC64AA626B11CA4001182FB /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7DC64A6F26B02111001182FB /* JJCSwiftTools.framework in Embed Frameworks */,
+				7DC64AA526B11CA3001182FB /* JJCSwiftTools.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -41,6 +41,8 @@
 		7DC64A5C26B01FF6001182FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DC64A5E26B01FF6001182FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DC64A6D26B02111001182FB /* JJCSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JJCSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DC64A9326B1054E001182FB /* JJCSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JJCSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DC64AA326B11CA3001182FB /* JJCSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JJCSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DC64A6E26B02111001182FB /* JJCSwiftTools.framework in Frameworks */,
+				7DC64AA426B11CA3001182FB /* JJCSwiftTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +99,8 @@
 		7DC64A6C26B02111001182FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7DC64AA326B11CA3001182FB /* JJCSwiftTools.framework */,
+				7DC64A9326B1054E001182FB /* JJCSwiftTools.framework */,
 				7DC64A6D26B02111001182FB /* JJCSwiftTools.framework */,
 			);
 			name = Frameworks;
@@ -112,7 +116,7 @@
 				7DC64A4926B01FF3001182FB /* Sources */,
 				7DC64A4A26B01FF3001182FB /* Frameworks */,
 				7DC64A4B26B01FF3001182FB /* Resources */,
-				7DC64A7026B02111001182FB /* Embed Frameworks */,
+				7DC64AA626B11CA4001182FB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

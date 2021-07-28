@@ -10,6 +10,8 @@
 		7DC64A3826B01EEB001182FB /* JJCSwiftTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DC64A3626B01EEB001182FB /* JJCSwiftTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DC64A7326B02153001182FB /* UIButton+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A7226B02153001182FB /* UIButton+JJCAPI.swift */; };
 		7DC64A7726B0F524001182FB /* UISearchBar+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A7626B0F524001182FB /* UISearchBar+JJCAPI.swift */; };
+		7DC64A7A26B0FBC6001182FB /* UIView+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A7926B0FBC6001182FB /* UIView+JJCAPI.swift */; };
+		7DC64A9C26B11793001182FB /* UIColor+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A9B26B11793001182FB /* UIColor+JJCAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +20,8 @@
 		7DC64A3726B01EEB001182FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DC64A7226B02153001182FB /* UIButton+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+JJCAPI.swift"; sourceTree = "<group>"; };
 		7DC64A7626B0F524001182FB /* UISearchBar+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+JJCAPI.swift"; sourceTree = "<group>"; };
+		7DC64A7926B0FBC6001182FB /* UIView+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+JJCAPI.swift"; sourceTree = "<group>"; };
+		7DC64A9B26B11793001182FB /* UIColor+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+JJCAPI.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 		7DC64A7126B0211F001182FB /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				7DC64A7926B0FBC6001182FB /* UIView+JJCAPI.swift */,
+				7DC64A9B26B11793001182FB /* UIColor+JJCAPI.swift */,
 				7DC64A7226B02153001182FB /* UIButton+JJCAPI.swift */,
 				7DC64A7626B0F524001182FB /* UISearchBar+JJCAPI.swift */,
 			);
@@ -153,8 +159,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DC64A9C26B11793001182FB /* UIColor+JJCAPI.swift in Sources */,
 				7DC64A7726B0F524001182FB /* UISearchBar+JJCAPI.swift in Sources */,
 				7DC64A7326B02153001182FB /* UIButton+JJCAPI.swift in Sources */,
+				7DC64A7A26B0FBC6001182FB /* UIView+JJCAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
