@@ -12,7 +12,7 @@ import UIKit
 extension UIColor {
     
     /// UIColor - 获取十六进制字符串 UIColor -> Hex String
-    public var hexString: String? {
+    public var jjc_hexString: String? {
         var red: CGFloat = 0
         var green: CGFloat = 0
         var blue: CGFloat = 0
@@ -37,7 +37,7 @@ extension UIColor {
     }
     
     /// UIColor - 初始化 RGBA 颜色，无需输入 255
-    public convenience init(color255 red: CGFloat, _ green: CGFloat, _ blue: CGFloat, _ alpha: CGFloat? = 1.0) {
+    public convenience init(color255 red: CGFloat, _ green: CGFloat, _ blue: CGFloat, alpha: CGFloat? = 1.0) {
         self.init(red: red / 255.0, green: green / 255.0, blue: blue / 255.0, alpha: alpha ?? 1.0)
     }
     
@@ -59,5 +59,21 @@ extension UIColor {
         let blue  = CGFloat(b) / 255.0
          
         self.init(red: red, green: green, blue: blue, alpha: alpha ?? 1.0)
+    }
+}
+
+// MARK:- UIColor 转换方法
+extension UIColor {
+    
+    /// UIColor - 颜色转图片
+    public func jjc_toImage() -> UIImage? {
+        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        context!.setFillColor(self.cgColor)
+        context!.fill(rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
     }
 }

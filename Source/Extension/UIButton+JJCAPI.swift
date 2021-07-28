@@ -39,11 +39,15 @@ extension UIButton {
 // MARK:- 设置属性 - 文字相关
 extension UIButton {
     
-    /// UIButton - 设置属性：title、titleColor、font、state、horizontalAlignment、verticalAlignment
+    /// UIButton - 设置属性：title、titleColor、font、fontFamily、fontSize、weight、state、horizontalAlignment、verticalAlignment
+    /// 注意：font、（fontFamily、fontSize）、（fontSize、weight）三者设置一种即可，其它的设置为 nil
     public func jjc_params(title: String?,
-                           titleColor: UIColor?,
-                           font: UIFont?,
-                           state: UIControl.State? = .normal,
+                           titleColor: UIColor? = nil,
+                           font: UIFont? = nil,
+                           fontFamily: String? = nil,
+                           fontSize: CGFloat? = nil,
+                           weight: UIFont.Weight? = nil,
+                           state: UIControl.State? = nil,
                            horizontalAlignment: UIControl.ContentHorizontalAlignment? = nil,
                            verticalAlignment: UIControl.ContentVerticalAlignment? = nil) {
         if let newTitle = title {
@@ -52,57 +56,25 @@ extension UIButton {
         if let newTitleColor = titleColor {
             setTitleColor(newTitleColor, for: state ?? .normal)
         }
+        
+        var tempFont: UIFont?
         if let newFont = font {
-            titleLabel?.font = newFont
+            tempFont = newFont
         }
+        if let newFontSize = fontSize {
+            if let newFontFamily = fontFamily {
+                tempFont = UIFont(name: newFontFamily, size: newFontSize)
+            } else {
+                tempFont = .systemFont(ofSize: newFontSize, weight: weight ?? .regular)
+            }
+        }
+        titleLabel?.font = tempFont
+        
         if let newHorizontalAlignment = horizontalAlignment {
             contentHorizontalAlignment = newHorizontalAlignment
         }
         if let newVerticalAlignment = verticalAlignment {
             contentVerticalAlignment = newVerticalAlignment
         }
-    }
-    
-    /// UIButton - 设置属性：title、titleColor、fontSize、weight、state、horizontalAlignment、verticalAlignment
-    public func jjc_params(title: String?,
-                           titleColor: UIColor?,
-                           fontSize: CGFloat?,
-                           weight: UIFont.Weight? = .regular,
-                           state: UIControl.State? = .normal,
-                           horizontalAlignment: UIControl.ContentHorizontalAlignment? = nil,
-                           verticalAlignment: UIControl.ContentVerticalAlignment? = nil) {
-        var font: UIFont?
-        if let newFontSize = fontSize {
-            font = .systemFont(ofSize: newFontSize, weight: weight ?? .regular)
-        }
-        jjc_params(title: title,
-                   titleColor: titleColor,
-                   font: font,
-                   state: state,
-                   horizontalAlignment: horizontalAlignment,
-                   verticalAlignment: verticalAlignment)
-    }
-    
-    /// UIButton - 设置属性：title、titleColor、fontSize、fontFamily、state、horizontalAlignment、verticalAlignment
-    public func jjc_params(title: String?,
-                           titleColor: UIColor?,
-                           fontSize: CGFloat?,
-                           fontFamily: String?,
-                           state: UIControl.State? = .normal,
-                           horizontalAlignment: UIControl.ContentHorizontalAlignment? = nil,
-                           verticalAlignment: UIControl.ContentVerticalAlignment? = nil) {
-        var font: UIFont?
-        if let newFontSize = fontSize {
-            if let newFontFamily = fontFamily {
-                font = UIFont(name: newFontFamily, size: newFontSize)
-            }
-            font = UIFont(name: "", size: newFontSize)
-        }
-        jjc_params(title: title,
-                   titleColor: titleColor,
-                   font: font,
-                   state: state,
-                   horizontalAlignment: horizontalAlignment,
-                   verticalAlignment: verticalAlignment)
     }
 }

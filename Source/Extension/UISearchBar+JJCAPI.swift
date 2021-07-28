@@ -8,9 +8,13 @@
 import Foundation
 import UIKit
 
-
 // MARK:- 设置系统属性
 extension UISearchBar {
+    
+    /// UISearchBar - 去除搜索框黑线
+    public func jjc_removeBlackLine() {
+        searchBarStyle = .minimal
+    }
     
     /// UISearchBar - 获取当前 TextField
     public func jjc_textField() -> UITextField? {

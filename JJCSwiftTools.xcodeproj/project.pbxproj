@@ -12,6 +12,11 @@
 		7DC64A7726B0F524001182FB /* UISearchBar+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A7626B0F524001182FB /* UISearchBar+JJCAPI.swift */; };
 		7DC64A7A26B0FBC6001182FB /* UIView+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A7926B0FBC6001182FB /* UIView+JJCAPI.swift */; };
 		7DC64A9C26B11793001182FB /* UIColor+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A9B26B11793001182FB /* UIColor+JJCAPI.swift */; };
+		7DC64AB026B12FCA001182FB /* CGRect+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64AAF26B12FCA001182FB /* CGRect+JJCAPI.swift */; };
+		7DC64AB326B13082001182FB /* UILabel+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64AB226B13082001182FB /* UILabel+JJCAPI.swift */; };
+		7DC64ABD26B13902001182FB /* CALayer+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64ABC26B13902001182FB /* CALayer+JJCAPI.swift */; };
+		7DC64AC026B13AD0001182FB /* UIImage+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64ABF26B13AD0001182FB /* UIImage+JJCAPI.swift */; };
+		7DC64AC326B13E48001182FB /* String+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64AC226B13E48001182FB /* String+JJCAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		7DC64A7626B0F524001182FB /* UISearchBar+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+JJCAPI.swift"; sourceTree = "<group>"; };
 		7DC64A7926B0FBC6001182FB /* UIView+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+JJCAPI.swift"; sourceTree = "<group>"; };
 		7DC64A9B26B11793001182FB /* UIColor+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+JJCAPI.swift"; sourceTree = "<group>"; };
+		7DC64AAF26B12FCA001182FB /* CGRect+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+JJCAPI.swift"; sourceTree = "<group>"; };
+		7DC64AB226B13082001182FB /* UILabel+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+JJCAPI.swift"; sourceTree = "<group>"; };
+		7DC64ABC26B13902001182FB /* CALayer+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+JJCAPI.swift"; sourceTree = "<group>"; };
+		7DC64ABF26B13AD0001182FB /* UIImage+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+JJCAPI.swift"; sourceTree = "<group>"; };
+		7DC64AC226B13E48001182FB /* String+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+JJCAPI.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +82,13 @@
 		7DC64A7126B0211F001182FB /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				7DC64AC226B13E48001182FB /* String+JJCAPI.swift */,
 				7DC64A7926B0FBC6001182FB /* UIView+JJCAPI.swift */,
+				7DC64ABC26B13902001182FB /* CALayer+JJCAPI.swift */,
+				7DC64AAF26B12FCA001182FB /* CGRect+JJCAPI.swift */,
 				7DC64A9B26B11793001182FB /* UIColor+JJCAPI.swift */,
+				7DC64ABF26B13AD0001182FB /* UIImage+JJCAPI.swift */,
+				7DC64AB226B13082001182FB /* UILabel+JJCAPI.swift */,
 				7DC64A7226B02153001182FB /* UIButton+JJCAPI.swift */,
 				7DC64A7626B0F524001182FB /* UISearchBar+JJCAPI.swift */,
 			);
@@ -160,8 +175,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DC64A9C26B11793001182FB /* UIColor+JJCAPI.swift in Sources */,
+				7DC64ABD26B13902001182FB /* CALayer+JJCAPI.swift in Sources */,
+				7DC64AB326B13082001182FB /* UILabel+JJCAPI.swift in Sources */,
+				7DC64AB026B12FCA001182FB /* CGRect+JJCAPI.swift in Sources */,
+				7DC64AC026B13AD0001182FB /* UIImage+JJCAPI.swift in Sources */,
 				7DC64A7726B0F524001182FB /* UISearchBar+JJCAPI.swift in Sources */,
 				7DC64A7326B02153001182FB /* UIButton+JJCAPI.swift in Sources */,
+				7DC64AC326B13E48001182FB /* String+JJCAPI.swift in Sources */,
 				7DC64A7A26B0FBC6001182FB /* UIView+JJCAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
