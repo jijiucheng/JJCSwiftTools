@@ -17,6 +17,7 @@
 		7DC64ABD26B13902001182FB /* CALayer+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64ABC26B13902001182FB /* CALayer+JJCAPI.swift */; };
 		7DC64AC026B13AD0001182FB /* UIImage+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64ABF26B13AD0001182FB /* UIImage+JJCAPI.swift */; };
 		7DC64AC326B13E48001182FB /* String+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64AC226B13E48001182FB /* String+JJCAPI.swift */; };
+		7DC64ADE26B24ED9001182FB /* JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64ADD26B24ED9001182FB /* JJCAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		7DC64ABC26B13902001182FB /* CALayer+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+JJCAPI.swift"; sourceTree = "<group>"; };
 		7DC64ABF26B13AD0001182FB /* UIImage+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+JJCAPI.swift"; sourceTree = "<group>"; };
 		7DC64AC226B13E48001182FB /* String+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+JJCAPI.swift"; sourceTree = "<group>"; };
+		7DC64ADD26B24ED9001182FB /* JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				7DC64A3F26B01F0A001182FB /* General */,
 				7DC64A7126B0211F001182FB /* Extension */,
+				7DC64AE026B264B8001182FB /* Resource */,
 				7DC64A3726B01EEB001182FB /* Info.plist */,
 			);
 			path = Source;
@@ -75,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				7DC64A3626B01EEB001182FB /* JJCSwiftTools.h */,
+				7DC64ADD26B24ED9001182FB /* JJCAPI.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -93,6 +97,13 @@
 				7DC64A7626B0F524001182FB /* UISearchBar+JJCAPI.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		7DC64AE026B264B8001182FB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +159,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 7DC64A2926B01EEB001182FB;
 			productRefGroup = 7DC64A3426B01EEB001182FB /* Products */;
@@ -178,6 +190,7 @@
 				7DC64ABD26B13902001182FB /* CALayer+JJCAPI.swift in Sources */,
 				7DC64AB326B13082001182FB /* UILabel+JJCAPI.swift in Sources */,
 				7DC64AB026B12FCA001182FB /* CGRect+JJCAPI.swift in Sources */,
+				7DC64ADE26B24ED9001182FB /* JJCAPI.swift in Sources */,
 				7DC64AC026B13AD0001182FB /* UIImage+JJCAPI.swift in Sources */,
 				7DC64A7726B0F524001182FB /* UISearchBar+JJCAPI.swift in Sources */,
 				7DC64A7326B02153001182FB /* UIButton+JJCAPI.swift in Sources */,

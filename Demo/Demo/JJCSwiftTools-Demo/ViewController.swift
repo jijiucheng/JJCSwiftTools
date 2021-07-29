@@ -55,6 +55,20 @@ class ViewController: UIViewController {
         print(label.text!.jjc_toPinYin(isTone: true, isDealü: false))
         
         
+        JJC_RadiusBorder(label, radius: 20, borderWidth: 5, borderColor: .black)
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        let alertVC = JJC_Alert(message: "测试一下", rightTitle: "窝草", rightAction: {
+            print("啊哈哈哈哈哈哈哈哈哈哈哈哈")
+        })
+        present(alertVC, animated: true, completion: nil)
     }
 }
+
+
+
 
