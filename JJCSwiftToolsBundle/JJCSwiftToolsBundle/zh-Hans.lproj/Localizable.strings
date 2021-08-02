@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  JJCSwiftToolsBundle
+
+  Created by mxgx on 2021/7/29.
+  
+*/
+
+
+"Tips"      = "温馨提示";
+"Ensure"    = "确定";
+"Cancel"    = "取消";

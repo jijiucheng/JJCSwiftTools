@@ -111,35 +111,55 @@ public func JJC_Local(_ key: String, _ comment: String? = nil) -> String {
     return NSLocalizedString(key, comment: comment ?? "")
 }
 
+/// 当前语言环境
+public func JJC_Language() -> String {
+    return Bundle.main.preferredLocalizations.first ?? "en"
+}
+
+/// 获取当前所有语言环境
+public func JJC_Languages() -> [String] {
+    return Bundle.main.localizations
+}
+
 /// 当前语言环境是否是中文
-public func JJC_IsChinese() -> Bool {
-    let preferredLang = Bundle.main.preferredLocalizations.first!
+public func JJC_IsChinese() -> (Bool, String) {
+    let preferredLang = Bundle.main.preferredLocalizations.first ?? ""
     switch String(describing: preferredLang) {
     case "en-US", "en-CN":
-        return false
+        return (false, preferredLang)
     case "zh-Hans-US","zh-Hans-CN","zh-Hant-CN","zh-TW","zh-HK","zh-Hans":
-        return true
+        return (true, preferredLang)
     default:
-        return false
+        return (false, preferredLang)
     }
 }
 
 /// 弹框 Alert - title、message、leftTitle、leftStyle、rightTitle、rightStyle、leftAction、rightAction
-public func JJC_Alert(title: String? = JJC_Local("Tips", "温馨提示"),
+public func JJC_Alert(title: String? = nil,
                       message: String? = nil,
-                      leftTitle: String? = JJC_Local("Cancel", "取消"),
+                      leftTitle: String? = nil,
                       leftStyle: UIAlertAction.Style? = .cancel,
-                      rightTitle: String? = JJC_Local("Ensure", "确定"),
+                      rightTitle: String? = nil,
                       rightStyle: UIAlertAction.Style? = .default,
                       leftAction: (() -> Void)? = nil,
                       rightAction: (() -> Void)? = nil) -> UIAlertController {
-    
-    let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    if let newLeftTitle = leftTitle {
+
+    var newTitle: String? = nil
+    if title != nil && (title ?? "").jjc_isEmptyOrInvalid() {
+        newTitle = JJC_LocalBundle_private("Tips", "温馨提示")
+    }
+    let alertVC = UIAlertController(title: newTitle, message: message, preferredStyle: .alert)
+    if var newLeftTitle = leftTitle {
+        if newLeftTitle.jjc_isEmptyOrInvalid() {
+            newLeftTitle = JJC_LocalBundle_private("Cancel", "取消")
+        }
         let leftAction = UIAlertAction(title: newLeftTitle, style: leftStyle ?? .cancel) { _ in leftAction?() }
         alertVC.addAction(leftAction)
     }
-    if let newRightTitle = rightTitle {
+    if var newRightTitle = rightTitle {
+        if newRightTitle.jjc_isEmptyOrInvalid() {
+            newRightTitle = JJC_LocalBundle_private("Ensure", "确定")
+        }
         let rightAction = UIAlertAction(title: newRightTitle, style: rightStyle ?? .default) { _ in rightAction?() }
         alertVC.addAction(rightAction)
     }

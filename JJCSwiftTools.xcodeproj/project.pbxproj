@@ -18,6 +18,9 @@
 		7DC64AC026B13AD0001182FB /* UIImage+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64ABF26B13AD0001182FB /* UIImage+JJCAPI.swift */; };
 		7DC64AC326B13E48001182FB /* String+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64AC226B13E48001182FB /* String+JJCAPI.swift */; };
 		7DC64ADE26B24ED9001182FB /* JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64ADD26B24ED9001182FB /* JJCAPI.swift */; };
+		7DC64B2F26B29D5F001182FB /* JJCSwiftTools.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7DC64B2E26B29D5F001182FB /* JJCSwiftTools.bundle */; };
+		7DC64B4E26B2BDC0001182FB /* Root.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DC64B4C26B2BD92001182FB /* Root.plist */; };
+		7DC64B5126B39E0C001182FB /* JJCPrivateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64B5026B39E0C001182FB /* JJCPrivateAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		7DC64ABF26B13AD0001182FB /* UIImage+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+JJCAPI.swift"; sourceTree = "<group>"; };
 		7DC64AC226B13E48001182FB /* String+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+JJCAPI.swift"; sourceTree = "<group>"; };
 		7DC64ADD26B24ED9001182FB /* JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCAPI.swift; sourceTree = "<group>"; };
+		7DC64B2E26B29D5F001182FB /* JJCSwiftTools.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JJCSwiftTools.bundle; sourceTree = "<group>"; };
+		7DC64B4C26B2BD92001182FB /* Root.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Root.plist; sourceTree = "<group>"; };
+		7DC64B5026B39E0C001182FB /* JJCPrivateAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCPrivateAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +74,7 @@
 			children = (
 				7DC64A3F26B01F0A001182FB /* General */,
 				7DC64A7126B0211F001182FB /* Extension */,
-				7DC64AE026B264B8001182FB /* Resource */,
+				7DC64AE026B264B8001182FB /* Resources */,
 				7DC64A3726B01EEB001182FB /* Info.plist */,
 			);
 			path = Source;
@@ -79,6 +85,7 @@
 			children = (
 				7DC64A3626B01EEB001182FB /* JJCSwiftTools.h */,
 				7DC64ADD26B24ED9001182FB /* JJCAPI.swift */,
+				7DC64B5026B39E0C001182FB /* JJCPrivateAPI.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -99,11 +106,13 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		7DC64AE026B264B8001182FB /* Resource */ = {
+		7DC64AE026B264B8001182FB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7DC64B4C26B2BD92001182FB /* Root.plist */,
+				7DC64B2E26B29D5F001182FB /* JJCSwiftTools.bundle */,
 			);
-			path = Resource;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +185,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DC64B4E26B2BDC0001182FB /* Root.plist in Resources */,
+				7DC64B2F26B29D5F001182FB /* JJCSwiftTools.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DC64A9C26B11793001182FB /* UIColor+JJCAPI.swift in Sources */,
+				7DC64B5126B39E0C001182FB /* JJCPrivateAPI.swift in Sources */,
 				7DC64ABD26B13902001182FB /* CALayer+JJCAPI.swift in Sources */,
 				7DC64AB326B13082001182FB /* UILabel+JJCAPI.swift in Sources */,
 				7DC64AB026B12FCA001182FB /* CGRect+JJCAPI.swift in Sources */,
@@ -342,6 +354,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_dylib;
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jijiucheng.JJCSwiftTools;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -370,6 +383,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_dylib;
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jijiucheng.JJCSwiftTools;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
