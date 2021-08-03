@@ -78,3 +78,75 @@ extension UIButton {
         }
     }
 }
+
+// MARK:- 设置图文相对位置
+extension UIButton {
+    
+    /// UIButton - 更新图文相对位置
+    public func jjc_layoutButtonStyle(style: UIButtonStyle, margin: CGFloat) {
+        DispatchQueue.main.async {
+            guard let imageView: UIImageView = self.imageView else {
+                return
+            }
+            guard let titleLabel: UILabel = self.titleLabel else {
+                return
+            }
+            
+            let imageWidth: CGFloat = imageView.intrinsicContentSize.width
+            let imageHeight: CGFloat = imageView.intrinsicContentSize.height
+            
+            var labelWidth: CGFloat = titleLabel.intrinsicContentSize.width
+            if style == .top || style == .bottom {
+                labelWidth = titleLabel.intrinsicContentSize.width
+            } else {
+                labelWidth = labelWidth > titleLabel.jjc_width ? titleLabel.jjc_width : labelWidth
+            }
+            let labelHeight: CGFloat = titleLabel.intrinsicContentSize.height
+            var imageEdgeInsets: UIEdgeInsets = .zero
+            var labelEdgeInsets: UIEdgeInsets = .zero
+
+            switch style {
+            case .top:
+                imageEdgeInsets = UIEdgeInsets(top: -labelHeight - margin * 0.5,
+                                               left: labelWidth * 0.5 + margin * 0.5,
+                                               bottom: 0,
+                                               right: 0)
+                labelEdgeInsets = UIEdgeInsets(top: 0,
+                                               left: -imageWidth,
+                                               bottom: -imageHeight - margin * 0.5,
+                                               right: 0)
+            case .left:
+                imageEdgeInsets = UIEdgeInsets(top: 0,
+                                               left: -margin * 0.5,
+                                               bottom: 0,
+                                               right: margin * 0.5)
+                labelEdgeInsets = UIEdgeInsets(top: 0,
+                                               left: margin * 0.5,
+                                               bottom: 0,
+                                               right: -margin * 0.5)
+            case .bottom:
+                imageEdgeInsets = UIEdgeInsets(top: labelHeight + margin * 0.5,
+                                               left: labelWidth * 0.5 + margin * 0.5,
+                                               bottom: 0,
+                                               right: 0)
+                labelEdgeInsets = UIEdgeInsets(top: -imageHeight - margin * 0.5,
+                                               left: -imageWidth,
+                                               bottom: 0,
+                                               right: 0)
+            case .right:
+                imageEdgeInsets = UIEdgeInsets(top: 0,
+                                               left: labelWidth + margin * 0.5,
+                                               bottom: 0,
+                                               right: -labelWidth - margin * 0.5)
+                labelEdgeInsets = UIEdgeInsets(top: 0,
+                                               left: -imageWidth - margin * 0.5,
+                                               bottom: 0,
+                                               right: imageWidth + margin * 0.5)
+            }
+            
+            self.titleEdgeInsets = labelEdgeInsets
+            self.imageEdgeInsets = imageEdgeInsets
+            self.setNeedsDisplay()
+        }
+    }
+}

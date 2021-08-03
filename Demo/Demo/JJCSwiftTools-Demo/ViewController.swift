@@ -19,15 +19,20 @@ class ViewController: UIViewController {
 //        btn.backgroundColor = .gray
         btn.backgroundColor = UIColor(hexString: "#05C1AE")
         print(UIColor(hexString: "#05C1AE").jjc_hexString ?? "")
-        btn.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
+        btn.frame = CGRect(x: 100, y: 100, width: 150, height: 150)
 //        btn.jjc_params(image: UIImage(named: "001.jpg"), selectImage: nil, highlightImage: nil)
 //        btn.jjc_params(image: UIImage(named: "001.jpg"), highlightImage: UIImage(named: "002.jepg"))
 //        btn.jjc_params(title: "ssss", titleColor: .red, font: .systemFont(ofSize: 16), state: .normal)
 //        btn.jjc_params(title: "测试", titleColor: .orange, font: , state: .highlighted)
 //        btn.jjc_params(title: "测试", titleColor: .orange, fontSize: 20, state: .highlighted)
 //        btn.jjc_params(title: "测试", titleColor: .orange, fontSize: 18, fontFamily: nil)
-        btn.jjc_params(title: "测试", titleColor: .orange, fontFamily: nil, fontSize: 20, state: .highlighted, verticalAlignment: .top)
+        btn.jjc_params(image: UIImage(named: "003"))
+        btn.jjc_params(title: "测试测试测试", titleColor: .orange, fontSize: 15)
+        btn.imageView?.backgroundColor = .red
+        btn.titleLabel?.backgroundColor = .blue
+        btn.jjc_layoutButtonStyle(style: .top, margin: 10)
         view.addSubview(btn)
+        
         
         
         // 测试 UISearchBar
@@ -56,6 +61,12 @@ class ViewController: UIViewController {
         
         
         JJC_RadiusBorder(label, radius: 20, borderWidth: 5, borderColor: .black)
+        
+        
+        let jjcBtn = JJCButton(frame: CGRect(x: 100, y: 450, width: 100, height: 100))
+        jjcBtn.backgroundColor = .lightGray
+        jjcBtn.params(style: .top, image: UIImage(named: "003"), title: "测试测试", color: .orange, fontSize: 15, contentInsets: .zero)
+        view.addSubview(jjcBtn)
     }
     
     

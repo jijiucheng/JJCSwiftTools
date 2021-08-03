@@ -21,6 +21,11 @@
 		7DC64B2F26B29D5F001182FB /* JJCSwiftTools.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7DC64B2E26B29D5F001182FB /* JJCSwiftTools.bundle */; };
 		7DC64B4E26B2BDC0001182FB /* Root.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DC64B4C26B2BD92001182FB /* Root.plist */; };
 		7DC64B5126B39E0C001182FB /* JJCPrivateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64B5026B39E0C001182FB /* JJCPrivateAPI.swift */; };
+		7DC64B5826B7C80B001182FB /* Bundle+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64B5726B7C80B001182FB /* Bundle+JJCAPI.swift */; };
+		7DC64B5F26B80D64001182FB /* JJCEnumAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64B5E26B80D64001182FB /* JJCEnumAPI.swift */; };
+		7DC64B6226B80DC2001182FB /* JJCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64B6126B80DC2001182FB /* JJCButton.swift */; };
+		7DC64B6526B80F7D001182FB /* JJCSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64B6426B80F7D001182FB /* JJCSegmentView.swift */; };
+		7DC64B7126B8E260001182FB /* JJCWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64B7026B8E260001182FB /* JJCWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +45,11 @@
 		7DC64B2E26B29D5F001182FB /* JJCSwiftTools.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JJCSwiftTools.bundle; sourceTree = "<group>"; };
 		7DC64B4C26B2BD92001182FB /* Root.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Root.plist; sourceTree = "<group>"; };
 		7DC64B5026B39E0C001182FB /* JJCPrivateAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCPrivateAPI.swift; sourceTree = "<group>"; };
+		7DC64B5726B7C80B001182FB /* Bundle+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+JJCAPI.swift"; sourceTree = "<group>"; };
+		7DC64B5E26B80D64001182FB /* JJCEnumAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCEnumAPI.swift; sourceTree = "<group>"; };
+		7DC64B6126B80DC2001182FB /* JJCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCButton.swift; sourceTree = "<group>"; };
+		7DC64B6426B80F7D001182FB /* JJCSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCSegmentView.swift; sourceTree = "<group>"; };
+		7DC64B7026B8E260001182FB /* JJCWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCWebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +84,7 @@
 			children = (
 				7DC64A3F26B01F0A001182FB /* General */,
 				7DC64A7126B0211F001182FB /* Extension */,
+				7DC64B5A26B7E58C001182FB /* View */,
 				7DC64AE026B264B8001182FB /* Resources */,
 				7DC64A3726B01EEB001182FB /* Info.plist */,
 			);
@@ -85,6 +96,7 @@
 			children = (
 				7DC64A3626B01EEB001182FB /* JJCSwiftTools.h */,
 				7DC64ADD26B24ED9001182FB /* JJCAPI.swift */,
+				7DC64B5E26B80D64001182FB /* JJCEnumAPI.swift */,
 				7DC64B5026B39E0C001182FB /* JJCPrivateAPI.swift */,
 			);
 			path = General;
@@ -102,6 +114,7 @@
 				7DC64AB226B13082001182FB /* UILabel+JJCAPI.swift */,
 				7DC64A7226B02153001182FB /* UIButton+JJCAPI.swift */,
 				7DC64A7626B0F524001182FB /* UISearchBar+JJCAPI.swift */,
+				7DC64B5726B7C80B001182FB /* Bundle+JJCAPI.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -113,6 +126,16 @@
 				7DC64B2E26B29D5F001182FB /* JJCSwiftTools.bundle */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		7DC64B5A26B7E58C001182FB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7DC64B6126B80DC2001182FB /* JJCButton.swift */,
+				7DC64B6426B80F7D001182FB /* JJCSegmentView.swift */,
+				7DC64B7026B8E260001182FB /* JJCWebViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DC64B6526B80F7D001182FB /* JJCSegmentView.swift in Sources */,
 				7DC64A9C26B11793001182FB /* UIColor+JJCAPI.swift in Sources */,
 				7DC64B5126B39E0C001182FB /* JJCPrivateAPI.swift in Sources */,
 				7DC64ABD26B13902001182FB /* CALayer+JJCAPI.swift in Sources */,
@@ -204,7 +228,11 @@
 				7DC64AB026B12FCA001182FB /* CGRect+JJCAPI.swift in Sources */,
 				7DC64ADE26B24ED9001182FB /* JJCAPI.swift in Sources */,
 				7DC64AC026B13AD0001182FB /* UIImage+JJCAPI.swift in Sources */,
+				7DC64B5F26B80D64001182FB /* JJCEnumAPI.swift in Sources */,
+				7DC64B7126B8E260001182FB /* JJCWebViewController.swift in Sources */,
 				7DC64A7726B0F524001182FB /* UISearchBar+JJCAPI.swift in Sources */,
+				7DC64B6226B80DC2001182FB /* JJCButton.swift in Sources */,
+				7DC64B5826B7C80B001182FB /* Bundle+JJCAPI.swift in Sources */,
 				7DC64A7326B02153001182FB /* UIButton+JJCAPI.swift in Sources */,
 				7DC64AC326B13E48001182FB /* String+JJCAPI.swift in Sources */,
 				7DC64A7A26B0FBC6001182FB /* UIView+JJCAPI.swift in Sources */,

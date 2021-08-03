@@ -43,3 +43,33 @@ extension UILabel {
         }
     }
 }
+
+// MARK:- 获取 UILabel 尺寸
+extension UILabel {
+    
+    /// UILabel - 根据文字 font 和 maxSize 获取 UILabel 尺寸
+    public func jjc_textSize(font: UIFont?, maxSize: CGSize) -> CGSize {
+        if let text = self.text {
+            var textSize: CGSize = text.jjc_getContentSize(font: font, size: maxSize)
+            // 向上取整
+            textSize = CGSize(width: ceil(textSize.width), height: ceil(textSize.height))
+            return textSize
+        }
+        return .zero
+    }
+    
+    /// UILabel - 获取 UILabel 文本尺寸
+    public func jjc_textSize() -> CGSize {
+        return jjc_textSize(font: self.font, maxSize: CGSize(width: CGFloat(MAXFLOAT), height: CGFloat(MAXFLOAT)))
+    }
+    
+    /// UILabel - 获取 UILabel 文本宽度
+    public func jjc_textWidth() -> CGFloat {
+        return jjc_textSize().width
+    }
+    
+    /// UILabel - 获取 UILabel 文本高度
+    public func jjc_textHeight() -> CGFloat {
+        return jjc_textSize().height
+    }
+}

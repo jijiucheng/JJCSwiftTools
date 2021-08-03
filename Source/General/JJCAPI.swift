@@ -106,14 +106,51 @@ public func JJC_HexColorA(_ hexString: String, _ a: CGFloat? = 1.0) -> UIColor {
     return UIColor(hexString: hexString, alpha: a ?? 1.0)
 }
 
-/// 本地语言 - 带注释
-public func JJC_Local(_ key: String, _ comment: String? = nil) -> String {
-    return NSLocalizedString(key, comment: comment ?? "")
-}
-
 /// 当前语言环境
 public func JJC_Language() -> String {
     return Bundle.main.preferredLocalizations.first ?? "en"
+}
+
+/// 获取当前语言环境（根据 Bundle 获取 lproj 的语言文件）
+public func JJC_Language(bundle: Bundle) -> String {
+    // 1、获取当前本地语言
+    let language = Locale.preferredLanguages.first ?? "en"
+    var targetLanguage: String?
+    // 2、获取当前 bundle 文件中所有本地语言
+    let languages = bundle.localizations
+    // 3.1、先查询是否有完全同名语言文件
+    for string in languages {
+        if language == string {
+            targetLanguage = string
+            break
+        }
+    }
+    // 3.2、如果查询不到同名语言文件，则遍历查询获取第一个包含前缀的
+    if targetLanguage == nil {
+        for string in languages {
+            if language.hasPrefix(string) {
+                targetLanguage = string
+                break
+            }
+        }
+    }
+    // 3.3、如果仍查询不到相同前缀的，则取当前语言首字符（国家缩写）进行匹配
+    if targetLanguage == nil {
+        if let languageHasPre = language.components(separatedBy: "-").first {
+            for string in languages {
+                if string.hasPrefix(languageHasPre) {
+                    targetLanguage = string
+                    break
+                }
+            }
+        }
+    }
+    // 3.4、如果以上仍什么都查找不到，将其置为 en
+    if targetLanguage == nil {
+        targetLanguage = "en"
+    }
+    
+    return targetLanguage ?? "en"
 }
 
 /// 获取当前所有语言环境
@@ -134,6 +171,23 @@ public func JJC_IsChinese() -> (Bool, String) {
     }
 }
 
+/// 本地语言 - 带注释
+public func JJC_Local(_ key: String, _ comment: String? = nil) -> String {
+    return NSLocalizedString(key, comment: comment ?? "")
+}
+
+/// 本地语言 - 带注释（根据 Bundle 获取 lproj 的语言文件）
+public func JJC_Local(_ key: String, _ comment: String? = nil, bundle: Bundle) -> String {
+    if let lprojPath = bundle.path(forResource: JJC_Language(bundle: bundle), ofType: "lproj") {
+        if Bundle(path: lprojPath) != nil {
+            if let languageBundle = Bundle(path: bundle.path(forResource: JJC_Language(bundle: bundle), ofType: "lproj") ?? "") {
+                return languageBundle.localizedString(forKey: key, value: key, table: nil)
+            }
+        }
+    }
+    return ""
+}
+
 /// 弹框 Alert - title、message、leftTitle、leftStyle、rightTitle、rightStyle、leftAction、rightAction
 public func JJC_Alert(title: String? = nil,
                       message: String? = nil,
@@ -143,7 +197,6 @@ public func JJC_Alert(title: String? = nil,
                       rightStyle: UIAlertAction.Style? = .default,
                       leftAction: (() -> Void)? = nil,
                       rightAction: (() -> Void)? = nil) -> UIAlertController {
-
     var newTitle: String? = nil
     if title != nil && (title ?? "").jjc_isEmptyOrInvalid() {
         newTitle = JJC_LocalBundle_private("Tips", "温馨提示")

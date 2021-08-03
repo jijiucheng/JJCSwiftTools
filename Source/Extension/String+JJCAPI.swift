@@ -392,6 +392,43 @@ extension String {
 // MARK:- String - 获取字符串宽高
 extension String {
     
+    /// String - 类方法 - 获取字符串尺寸（CGSize）
+    public static func jjc_getContentSize(_ content: String,
+                                          font: UIFont? = nil,
+                                          fontFamily: String? = nil,
+                                          fontSize: CGFloat? = nil,
+                                          weight: UIFont.Weight? = nil,
+                                          size: CGSize,
+                                          options: NSStringDrawingOptions? = nil,
+                                          paragraphStyle: NSParagraphStyle? = nil) -> CGSize {
+        var tempFont: UIFont?
+        if let newFont = font {
+            tempFont = newFont
+        }
+        if let newFontSize = fontSize {
+            if let newFontFamily = fontFamily {
+                tempFont = UIFont(name: newFontFamily, size: newFontSize)
+            } else {
+                tempFont = .systemFont(ofSize: newFontSize, weight: weight ?? .regular)
+            }
+        }
+
+        var attributes: [NSAttributedString.Key : Any]?
+        if let newParagraphStyle = paragraphStyle {
+            attributes = [NSAttributedString.Key.font: tempFont as Any,
+                          NSAttributedString.Key.paragraphStyle: newParagraphStyle]
+        } else {
+            attributes = [NSAttributedString.Key.font: tempFont as Any]
+        }
+
+        let option = NSStringDrawingOptions.usesLineFragmentOrigin.rawValue | NSStringDrawingOptions.truncatesLastVisibleLine.rawValue | NSStringDrawingOptions.usesFontLeading.rawValue
+        let contentSize = NSString(string: content).boundingRect(with: size,
+                                                                 options: options ?? NSStringDrawingOptions(rawValue: option),
+                                                                 attributes: attributes,
+                                                                 context: nil).size
+        return contentSize
+    }
+    
     /// String - 类方法 - 获取字符串尺寸
     public static func jjc_getContentSize(_ content: String,
                                           font: UIFont? = nil,
@@ -441,6 +478,24 @@ extension String {
                                                                  attributes: attributes,
                                                                  context: nil).size
         return contentSize
+    }
+    
+    /// String - 实例方法 - 获取字符串尺寸（CGSize）
+    public func jjc_getContentSize(font: UIFont? = nil,
+                                   fontFamily: String? = nil,
+                                   fontSize: CGFloat? = nil,
+                                   weight: UIFont.Weight? = nil,
+                                   size: CGSize,
+                                   options: NSStringDrawingOptions? = nil,
+                                   paragraphStyle: NSParagraphStyle? = nil) -> CGSize {
+        String.jjc_getContentSize(self,
+                                  font: font,
+                                  fontFamily: fontFamily,
+                                  fontSize: fontSize,
+                                  weight: weight,
+                                  size: size,
+                                  options: options,
+                                  paragraphStyle: paragraphStyle)
     }
     
     /// String - 实例方法 - 获取字符串尺寸

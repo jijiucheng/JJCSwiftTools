@@ -15,55 +15,13 @@ import Foundation
 
 
 /// 本地语言 - 带注释（Bundle 文件）
-///
+/// JJCSwiftToolsBundle 的设计原因是 Bundle 的 public init(for aClass: AnyClass) 方法，根据某个类获取当前工程下的主 Bundle，如果不进行如此操作，获取的就是 Demo 工程里的 Main Bundle
+/// 参考链接：https://www.jianshu.com/p/b64ff9d8e7ce、https://www.jianshu.com/p/173076faa742
 fileprivate class JJCSwiftToolsBundle {}
 public func JJC_Local_private(_ key: String, _ comment: String? = nil, bundle: String) -> String {
     let bundlePath = Bundle(for: JJCSwiftToolsBundle.self).path(forResource: bundle, ofType: "bundle") ?? ""
     if let mainBundle = Bundle(path: bundlePath) {
-        // 获取当前本地语言
-        let language = Locale.preferredLanguages.first ?? "en"
-        var tempLanguage: String?
-        // 获取当前 bundle 文件中所有本地语言
-        let languages = mainBundle.localizations
-        // 1、先查询是否有完全同名语言文件
-        for string in languages {
-            if language == string {
-                tempLanguage = string
-                break
-            }
-        }
-        // 2、如果查询不到同名语言文件，则遍历查询获取第一个包含前缀的
-        if tempLanguage == nil {
-            for string in languages {
-                if language.hasPrefix(string) {
-                    tempLanguage = string
-                    break
-                }
-            }
-        }
-        // 3、如果仍查询不到相同前缀的，则取当前语言首字符（国家缩写）进行匹配
-        if tempLanguage == nil {
-            if let languageHasPre = language.components(separatedBy: "-").first {
-                for string in languages {
-                    if string.hasPrefix(languageHasPre) {
-                        tempLanguage = string
-                        break
-                    }
-                }
-            }
-        }
-        // 4、如果以上仍什么都查找不到，将其置为 en
-        if tempLanguage == nil {
-            tempLanguage = "en"
-        }
-        
-        if let lprojPath = mainBundle.path(forResource: tempLanguage, ofType: "lproj") {
-            if Bundle(path: lprojPath) != nil {
-                if let languageBundle = Bundle(path: mainBundle.path(forResource: tempLanguage, ofType: "lproj") ?? "") {
-                    return languageBundle.localizedString(forKey: key, value: key, table: nil)
-                }
-            }
-        }
+        return JJC_Local(key, comment, bundle: mainBundle)
     }
     return ""
 }
