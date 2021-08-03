@@ -67,6 +67,12 @@ class ViewController: UIViewController {
         jjcBtn.backgroundColor = .lightGray
         jjcBtn.params(style: .top, image: UIImage(named: "003"), title: "测试测试", color: .orange, fontSize: 15, contentInsets: .zero)
         view.addSubview(jjcBtn)
+        
+        
+        var model = JJCImageTitleModel()
+        model.image = UIImage(named: "003")
+        model.title = "ssssss"
+        print("--------------------- \(model.title)")
     }
     
     
