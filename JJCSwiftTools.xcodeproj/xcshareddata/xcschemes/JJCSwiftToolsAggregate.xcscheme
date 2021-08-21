@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7DC64A3226B01EEB001182FB"
-               BuildableName = "JJCSwiftTools.framework"
-               BlueprintName = "JJCSwiftTools"
+               BlueprintIdentifier = "7D7A2D1C26CA6F3B0090D726"
+               BuildableName = "JJCSwiftToolsAggregate"
+               BlueprintName = "JJCSwiftToolsAggregate"
                ReferencedContainer = "container:JJCSwiftTools.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -50,9 +50,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7DC64A3226B01EEB001182FB"
-            BuildableName = "JJCSwiftTools.framework"
-            BlueprintName = "JJCSwiftTools"
+            BlueprintIdentifier = "7D7A2D1C26CA6F3B0090D726"
+            BuildableName = "JJCSwiftToolsAggregate"
+            BlueprintName = "JJCSwiftToolsAggregate"
             ReferencedContainer = "container:JJCSwiftTools.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

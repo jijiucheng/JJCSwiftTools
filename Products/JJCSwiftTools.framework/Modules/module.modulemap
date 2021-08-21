@@ -1,0 +1,11 @@
+framework module JJCSwiftTools {
+  umbrella header "JJCSwiftTools.h"
+
+  export *
+  module * { export * }
+}
+
+module JJCSwiftTools.Swift {
+    header "JJCSwiftTools-Swift.h"
+    requires objc
+}

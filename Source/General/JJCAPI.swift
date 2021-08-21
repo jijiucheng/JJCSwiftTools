@@ -40,7 +40,7 @@ public let JJC_IsIPad = (UIDevice.current.userInterfaceIdiom == .pad)
 /// 是否为 CarPlay
 public let JJC_IsCarPlay = (UIDevice.current.userInterfaceIdiom == .carPlay)
 
-/// 系统信息 - App 名称
+/// 系统信息 - App 唯一识别号
 public let JJC_BundleIdentifier = Bundle.main.object(forInfoDictionaryKey: "CFBundleIdentifier") as! String
 /// 系统信息 - App 名称
 public let JJC_BundleDisplayName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as! String

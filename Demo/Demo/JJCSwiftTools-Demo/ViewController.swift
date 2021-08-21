@@ -79,7 +79,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        let alertVC = JJC_Alert(message: "测试一下", rightTitle: "", rightAction: {
+        let alertVC = JJC_Alert(title:"", message: "测试一下", rightTitle: "", rightAction: {
             print("啊哈哈哈哈哈哈哈哈哈哈哈哈")
         })
         present(alertVC, animated: true, completion: nil)

@@ -6,7 +6,23 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		7D7A2D1C26CA6F3B0090D726 /* JJCSwiftToolsAggregate */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 7D7A2D1D26CA6F3B0090D726 /* Build configuration list for PBXAggregateTarget "JJCSwiftToolsAggregate" */;
+			buildPhases = (
+				7D7A2D2326CA6F5D0090D726 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = JJCSwiftToolsAggregate;
+			productName = JJCSwiftToolsAggregate;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
+		7D3B458426D0FB500037F09F /* JJCDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3B458326D0FB500037F09F /* JJCDevice.swift */; };
+		7D3B458826D101040037F09F /* JJCAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3B458726D101040037F09F /* JJCAppInfo.swift */; };
 		7DC64A3826B01EEB001182FB /* JJCSwiftTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DC64A3626B01EEB001182FB /* JJCSwiftTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DC64A7326B02153001182FB /* UIButton+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A7226B02153001182FB /* UIButton+JJCAPI.swift */; };
 		7DC64A7726B0F524001182FB /* UISearchBar+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A7626B0F524001182FB /* UISearchBar+JJCAPI.swift */; };
@@ -31,6 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D3B458326D0FB500037F09F /* JJCDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCDevice.swift; sourceTree = "<group>"; };
+		7D3B458726D101040037F09F /* JJCAppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCAppInfo.swift; sourceTree = "<group>"; };
 		7DC64A3326B01EEB001182FB /* JJCSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JJCSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC64A3626B01EEB001182FB /* JJCSwiftTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJCSwiftTools.h; sourceTree = "<group>"; };
 		7DC64A3726B01EEB001182FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,6 +120,8 @@
 				7DC64A3626B01EEB001182FB /* JJCSwiftTools.h */,
 				7DC64ADD26B24ED9001182FB /* JJCAPI.swift */,
 				7DC64B5E26B80D64001182FB /* JJCEnumAPI.swift */,
+				7D3B458326D0FB500037F09F /* JJCDevice.swift */,
+				7D3B458726D101040037F09F /* JJCAppInfo.swift */,
 				7DC64B5026B39E0C001182FB /* JJCPrivateAPI.swift */,
 			);
 			path = General;
@@ -192,6 +212,9 @@
 			attributes = {
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
+					7D7A2D1C26CA6F3B0090D726 = {
+						CreatedOnToolsVersion = 12.3;
+					};
 					7DC64A3226B01EEB001182FB = {
 						CreatedOnToolsVersion = 12.3;
 						LastSwiftMigration = 1230;
@@ -213,6 +236,7 @@
 			projectRoot = "";
 			targets = (
 				7DC64A3226B01EEB001182FB /* JJCSwiftTools */,
+				7D7A2D1C26CA6F3B0090D726 /* JJCSwiftToolsAggregate */,
 			);
 		};
 /* End PBXProject section */
@@ -229,6 +253,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7D7A2D2326CA6F5D0090D726 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Sets the target folders and the final framework product.\n# 如果工程名称和Framework的Target名称不一样的话，要自定义FMKNAME\n# 例如: FMK_NAME = \"MyFramework\"\nFMK_NAME=${PROJECT_NAME}\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nINSTALL_DIR=${SRCROOT}/Products/${FMK_NAME}.framework\n# Working dir will be deleted after the framework creation.\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator/${FMK_NAME}.framework\n# -configuration ${CONFIGURATION}\n# Clean and Building both architectures.\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphoneos clean build\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphonesimulator clean build\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\nmkdir -p \"${INSTALL_DIR}\"\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/\"\ncp -R \"${SIMULATOR_DIR}/\" \"${INSTALL_DIR}/\"\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\nlipo -create \"${DEVICE_DIR}/${FMK_NAME}\" \"${SIMULATOR_DIR}/${FMK_NAME}\" -output \"${INSTALL_DIR}/${FMK_NAME}\"\nrm -r \"${WRK_DIR}\"\n# open \"${INSTALL_DIR}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7DC64A2F26B01EEB001182FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -242,8 +286,10 @@
 				7DC64B7926B8E940001182FB /* JJCDataModelTool.swift in Sources */,
 				7DC64AB026B12FCA001182FB /* CGRect+JJCAPI.swift in Sources */,
 				7DC64B7526B8E55F001182FB /* JJCImageTitleModel.swift in Sources */,
+				7D3B458426D0FB500037F09F /* JJCDevice.swift in Sources */,
 				7DC64ADE26B24ED9001182FB /* JJCAPI.swift in Sources */,
 				7DC64AC026B13AD0001182FB /* UIImage+JJCAPI.swift in Sources */,
+				7D3B458826D101040037F09F /* JJCAppInfo.swift in Sources */,
 				7DC64B5F26B80D64001182FB /* JJCEnumAPI.swift in Sources */,
 				7DC64B7126B8E260001182FB /* JJCWebViewController.swift in Sources */,
 				7DC64A7726B0F524001182FB /* UISearchBar+JJCAPI.swift in Sources */,
@@ -258,6 +304,24 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		7D7A2D1E26CA6F3B0090D726 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DESPDWDBQT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7D7A2D1F26CA6F3B0090D726 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DESPDWDBQT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		7DC64A3926B01EEB001182FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -440,6 +504,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7D7A2D1D26CA6F3B0090D726 /* Build configuration list for PBXAggregateTarget "JJCSwiftToolsAggregate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D7A2D1E26CA6F3B0090D726 /* Debug */,
+				7D7A2D1F26CA6F3B0090D726 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7DC64A2D26B01EEB001182FB /* Build configuration list for PBXProject "JJCSwiftTools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
