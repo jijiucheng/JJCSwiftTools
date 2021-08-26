@@ -46,6 +46,19 @@
 		7DC64B7926B8E940001182FB /* JJCDataModelTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64B7826B8E940001182FB /* JJCDataModelTool.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7D3B45BB26D78A9D0037F09F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		7D3B458326D0FB500037F09F /* JJCDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCDevice.swift; sourceTree = "<group>"; };
 		7D3B458726D101040037F09F /* JJCAppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCAppInfo.swift; sourceTree = "<group>"; };
@@ -194,6 +207,7 @@
 				7DC64A2F26B01EEB001182FB /* Sources */,
 				7DC64A3026B01EEB001182FB /* Frameworks */,
 				7DC64A3126B01EEB001182FB /* Resources */,
+				7D3B45BB26D78A9D0037F09F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -307,6 +321,7 @@
 		7D7A2D1E26CA6F3B0090D726 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DESPDWDBQT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -316,6 +331,7 @@
 		7D7A2D1F26CA6F3B0090D726 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DESPDWDBQT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -447,6 +463,7 @@
 		7DC64A3C26B01EEB001182FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 001;
@@ -470,12 +487,14 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Debug;
 		};
 		7DC64A3D26B01EEB001182FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 001;
@@ -498,6 +517,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Release;
 		};

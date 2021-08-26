@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/JJCSwiftTools-Swift.h</key>
 		<data>
-		p2XtfysNaB9v7qWNKhk8spa8ldo=
+		eDQluv4BOoevPHu0CPHloISlVWM=
 		</data>
 		<key>Headers/JJCSwiftTools.h</key>
 		<data>
@@ -36,51 +36,51 @@
 		</dict>
 		<key>Modules/JJCSwiftTools.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		WWjd7DZw9jjnh079sefSSCHQKW4=
+		wG44GAvuGAtzLxSuw0qgjYU6+5c=
 		</data>
 		<key>Modules/JJCSwiftTools.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		WWjd7DZw9jjnh079sefSSCHQKW4=
+		wG44GAvuGAtzLxSuw0qgjYU6+5c=
 		</data>
 		<key>Modules/JJCSwiftTools.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		mlPrQDqyvFosn3mrCmfYGP1PDJk=
+		5bzUTz3YsoSkwHyW2Mg12JnNQCU=
 		</data>
 		<key>Modules/JJCSwiftTools.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<data>
-		mlPrQDqyvFosn3mrCmfYGP1PDJk=
+		5bzUTz3YsoSkwHyW2Mg12JnNQCU=
 		</data>
 		<key>Modules/JJCSwiftTools.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		C8RpGQXLBCsROHgytuOnxZqN4aw=
+		N1rz9JSRVjVWwf7yTE4YGyDozNs=
 		</data>
 		<key>Modules/JJCSwiftTools.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		pNXiCR43RHZ4dh1iq2ABlrIo3hM=
+		HHYhvbL0fUBIeq/j1xny39vWdes=
 		</data>
 		<key>Modules/JJCSwiftTools.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		C8RpGQXLBCsROHgytuOnxZqN4aw=
+		N1rz9JSRVjVWwf7yTE4YGyDozNs=
 		</data>
 		<key>Modules/JJCSwiftTools.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		pNXiCR43RHZ4dh1iq2ABlrIo3hM=
+		HHYhvbL0fUBIeq/j1xny39vWdes=
 		</data>
 		<key>Modules/JJCSwiftTools.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Mljt9xNPJbUQirT29c5OMIY0E2k=
+		YUlgMYeU6bvOvMVLsyVNTXN0TA8=
 		</data>
 		<key>Modules/JJCSwiftTools.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		qh0DHiTUYafmA9C7YY8ctM+pkKA=
+		o12o4tqGp2F1ZoWqOb/+MqyYvUA=
 		</data>
 		<key>Modules/JJCSwiftTools.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		Mljt9xNPJbUQirT29c5OMIY0E2k=
+		YUlgMYeU6bvOvMVLsyVNTXN0TA8=
 		</data>
 		<key>Modules/JJCSwiftTools.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		qh0DHiTUYafmA9C7YY8ctM+pkKA=
+		o12o4tqGp2F1ZoWqOb/+MqyYvUA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -97,7 +97,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YTtVKKW+rGb3+g+ciAkqPDqAXY2VYtM2TZypS0qb364=
+			y9pzN+2F5ktbVK5Y7iIbdzxjj05Sd7+SCAQCa6FFalY=
 			</data>
 		</dict>
 		<key>Headers/JJCSwiftTools.h</key>
@@ -129,84 +129,84 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VNxrGB3o6NNKI2Ib2Kzd0XOkBoJo3qX78DPbfhA0nwQ=
+			DpbolNPmELvl1DvyKSnU5eSYyxPYOz4aMHFUdzZFKXk=
 			</data>
 		</dict>
 		<key>Modules/JJCSwiftTools.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VNxrGB3o6NNKI2Ib2Kzd0XOkBoJo3qX78DPbfhA0nwQ=
+			DpbolNPmELvl1DvyKSnU5eSYyxPYOz4aMHFUdzZFKXk=
 			</data>
 		</dict>
 		<key>Modules/JJCSwiftTools.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tsPt4QGSXyFmZr4TElsYMy7odbPkTQIB84qmcF8Li9w=
+			CQOJeqFc9Y4sqwV8bxHeaeS0WfG0Tu7ElvdT0mC6y6U=
 			</data>
 		</dict>
 		<key>Modules/JJCSwiftTools.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tsPt4QGSXyFmZr4TElsYMy7odbPkTQIB84qmcF8Li9w=
+			CQOJeqFc9Y4sqwV8bxHeaeS0WfG0Tu7ElvdT0mC6y6U=
 			</data>
 		</dict>
 		<key>Modules/JJCSwiftTools.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3b2gApiGbBx9fZme4TJOZa+gXDHhyyu0pzWJiTumiPs=
+			0VHhlmdoaz39zYct0zPZ+qEQ7/fX0TsBwGuGDKGRWBk=
 			</data>
 		</dict>
 		<key>Modules/JJCSwiftTools.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BOJ0roJTNk625NxkGpWkOLJtN4O+2AU74nRNkbjRJtc=
+			oBK5rbQyPZdBenFt2M4XynsZNgQWPPto65pPlp05EXw=
 			</data>
 		</dict>
 		<key>Modules/JJCSwiftTools.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3b2gApiGbBx9fZme4TJOZa+gXDHhyyu0pzWJiTumiPs=
+			0VHhlmdoaz39zYct0zPZ+qEQ7/fX0TsBwGuGDKGRWBk=
 			</data>
 		</dict>
 		<key>Modules/JJCSwiftTools.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BOJ0roJTNk625NxkGpWkOLJtN4O+2AU74nRNkbjRJtc=
+			oBK5rbQyPZdBenFt2M4XynsZNgQWPPto65pPlp05EXw=
 			</data>
 		</dict>
 		<key>Modules/JJCSwiftTools.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			w8Vw3qDY7DpKDVTNrDmTBa4GikCyyZwkcrIyQonn4A4=
+			Kz8gVTF4ttKJRaSv7N1x7o68eIbZ3CjeX4zAVWR610M=
 			</data>
 		</dict>
 		<key>Modules/JJCSwiftTools.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bgj4V4G0YDk2H+IF+UqfuNz9G9VyBfx0krLzJyzp8VU=
+			B6XNUXzf5QmX5uy3Cwh3wC+L/HKC+7jdRDLAXnF1ZFs=
 			</data>
 		</dict>
 		<key>Modules/JJCSwiftTools.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			w8Vw3qDY7DpKDVTNrDmTBa4GikCyyZwkcrIyQonn4A4=
+			Kz8gVTF4ttKJRaSv7N1x7o68eIbZ3CjeX4zAVWR610M=
 			</data>
 		</dict>
 		<key>Modules/JJCSwiftTools.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bgj4V4G0YDk2H+IF+UqfuNz9G9VyBfx0krLzJyzp8VU=
+			B6XNUXzf5QmX5uy3Cwh3wC+L/HKC+7jdRDLAXnF1ZFs=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

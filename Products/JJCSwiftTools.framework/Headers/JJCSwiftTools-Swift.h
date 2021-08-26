@@ -215,6 +215,13 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+
+SWIFT_CLASS("_TtC13JJCSwiftTools10JJCAppInfo")
+@interface JJCAppInfo : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 @class NSCoder;
 
 SWIFT_CLASS("_TtC13JJCSwiftTools9JJCButton")
@@ -224,16 +231,24 @@ SWIFT_CLASS("_TtC13JJCSwiftTools9JJCButton")
 @end
 
 
-
-
 @interface JJCButton (SWIFT_EXTENSION(JJCSwiftTools))
 @property (nonatomic, getter=isSelected) BOOL selected;
 @end
 
 
 
+
+
 SWIFT_CLASS("_TtC13JJCSwiftTools16JJCDataModelTool")
 @interface JJCDataModelTool : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+
+SWIFT_CLASS("_TtC13JJCSwiftTools9JJCDevice")
+@interface JJCDevice : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -509,6 +524,13 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+
+SWIFT_CLASS("_TtC13JJCSwiftTools10JJCAppInfo")
+@interface JJCAppInfo : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 @class NSCoder;
 
 SWIFT_CLASS("_TtC13JJCSwiftTools9JJCButton")
@@ -518,16 +540,24 @@ SWIFT_CLASS("_TtC13JJCSwiftTools9JJCButton")
 @end
 
 
-
-
 @interface JJCButton (SWIFT_EXTENSION(JJCSwiftTools))
 @property (nonatomic, getter=isSelected) BOOL selected;
 @end
 
 
 
+
+
 SWIFT_CLASS("_TtC13JJCSwiftTools16JJCDataModelTool")
 @interface JJCDataModelTool : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+
+SWIFT_CLASS("_TtC13JJCSwiftTools9JJCDevice")
+@interface JJCDevice : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
