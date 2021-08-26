@@ -6,14 +6,14 @@ Pod::Spec.new do |s|
 
   s.homepage     = "https://github.com/jijiucheng/JJCSwiftTools"
   s.license      = { :type => "MIT", :file => "LICENSE" }
-  s.authors      = { "苜蓿鬼仙' => '302926124@qq.com" }
+  s.authors      = { "苜蓿鬼仙" => "302926124@qq.com" }
 
   s.swift_versions = ['5.0']
   s.ios.deployment_target = "13.0"
   s.requires_arc = true
 
   s.source       = { :git => "https://github.com/jijiucheng/JJCSwiftTools.git", :tag => s.version }
-  s.source_files = ["Sources/**/*.swift"]
-  s.resource     = ["Source/Resource/JJCSwiftTools.bundle"]
+  s.source_files = [ "Sources/**/*.swift" ]
+  s.resource     = [ "Source/Resource/JJCSwiftTools.bundle" ]
   
 end
