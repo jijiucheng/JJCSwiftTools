@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7DB4DCC526D7937800B33F2E /* JJCSwiftTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC64B4026B2A7F8001182FB /* JJCSwiftTools.framework */; };
-		7DB4DCC626D7937800B33F2E /* JJCSwiftTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC64B4026B2A7F8001182FB /* JJCSwiftTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7DB4DD5C26D8BD6400B33F2E /* JJCSwiftTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB4DD5826D8BD0E00B33F2E /* JJCSwiftTools.framework */; };
+		7DB4DD5D26D8BD6400B33F2E /* JJCSwiftTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB4DD5826D8BD0E00B33F2E /* JJCSwiftTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DC64A5126B01FF3001182FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A5026B01FF3001182FB /* AppDelegate.swift */; };
 		7DC64A5326B01FF3001182FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A5226B01FF3001182FB /* SceneDelegate.swift */; };
 		7DC64A5526B01FF3001182FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A5426B01FF3001182FB /* ViewController.swift */; };
@@ -18,13 +18,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7DB4DCC726D7937800B33F2E /* Embed Frameworks */ = {
+		7DB4DD5E26D8BD6400B33F2E /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7DB4DCC626D7937800B33F2E /* JJCSwiftTools.framework in Embed Frameworks */,
+				7DB4DD5D26D8BD6400B33F2E /* JJCSwiftTools.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -37,6 +37,7 @@
 		7D3B45A026D10AB80037F09F /* JJCSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JJCSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3B45F226D78CE80037F09F /* JJCSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JJCSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7A2D2626CA6FE70090D726 /* JJCSwiftTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JJCSwiftTools.framework; path = ../Products/JJCSwiftTools.framework; sourceTree = "<group>"; };
+		7DB4DD5826D8BD0E00B33F2E /* JJCSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JJCSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC64A4D26B01FF3001182FB /* JJCSwiftTools-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JJCSwiftTools-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC64A5026B01FF3001182FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DC64A5226B01FF3001182FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DB4DCC526D7937800B33F2E /* JJCSwiftTools.framework in Frameworks */,
+				7DB4DD5C26D8BD6400B33F2E /* JJCSwiftTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +103,7 @@
 		7DC64A6C26B02111001182FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7DB4DD5826D8BD0E00B33F2E /* JJCSwiftTools.framework */,
 				7D3B45F226D78CE80037F09F /* JJCSwiftTools.framework */,
 				7D3B45A026D10AB80037F09F /* JJCSwiftTools.framework */,
 				7D3B459B26D10A040037F09F /* JJCSwiftTools.framework */,
@@ -122,7 +124,7 @@
 				7DC64A4926B01FF3001182FB /* Sources */,
 				7DC64A4A26B01FF3001182FB /* Frameworks */,
 				7DC64A4B26B01FF3001182FB /* Resources */,
-				7DB4DCC726D7937800B33F2E /* Embed Frameworks */,
+				7DB4DD5E26D8BD6400B33F2E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/jijiucheng/JJCSwiftTools.git", :tag => s.version }
   s.source_files = [ "Sources/**/*.swift" ]
-  s.resource     = [ "Source/Resource/JJCSwiftTools.bundle" ]
+  s.resource     = [ "Sources/Resource/JJCSwiftTools.bundle" ]
   
 end
