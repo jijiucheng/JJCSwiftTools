@@ -44,6 +44,7 @@
 		7DC64B7126B8E260001182FB /* JJCWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64B7026B8E260001182FB /* JJCWebViewController.swift */; };
 		7DC64B7526B8E55F001182FB /* JJCImageTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64B7426B8E55F001182FB /* JJCImageTitleModel.swift */; };
 		7DC64B7926B8E940001182FB /* JJCDataModelTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64B7826B8E940001182FB /* JJCDataModelTool.swift */; };
+		7DDFAFC326F039940039D6CD /* UIBarButtonItem+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDFAFC226F039940039D6CD /* UIBarButtonItem+JJCAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -85,6 +86,7 @@
 		7DC64B7026B8E260001182FB /* JJCWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCWebViewController.swift; sourceTree = "<group>"; };
 		7DC64B7426B8E55F001182FB /* JJCImageTitleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCImageTitleModel.swift; sourceTree = "<group>"; };
 		7DC64B7826B8E940001182FB /* JJCDataModelTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCDataModelTool.swift; sourceTree = "<group>"; };
+		7DDFAFC226F039940039D6CD /* UIBarButtonItem+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+JJCAPI.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		7DC64A7126B0211F001182FB /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				7DDFAFC226F039940039D6CD /* UIBarButtonItem+JJCAPI.swift */,
 				7DC64AC226B13E48001182FB /* String+JJCAPI.swift */,
 				7DC64A7926B0FBC6001182FB /* UIView+JJCAPI.swift */,
 				7DC64ABC26B13902001182FB /* CALayer+JJCAPI.swift */,
@@ -310,6 +313,7 @@
 				7DC64B6226B80DC2001182FB /* JJCButton.swift in Sources */,
 				7DC64B5826B7C80B001182FB /* Bundle+JJCAPI.swift in Sources */,
 				7DC64A7326B02153001182FB /* UIButton+JJCAPI.swift in Sources */,
+				7DDFAFC326F039940039D6CD /* UIBarButtonItem+JJCAPI.swift in Sources */,
 				7DC64AC326B13E48001182FB /* String+JJCAPI.swift in Sources */,
 				7DC64A7A26B0FBC6001182FB /* UIView+JJCAPI.swift in Sources */,
 			);

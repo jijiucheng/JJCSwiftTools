@@ -106,6 +106,17 @@ public func JJC_HexColorA(_ hexString: String, _ a: CGFloat? = 1.0) -> UIColor {
     return UIColor(hexString: hexString, alpha: a ?? 1.0)
 }
 
+/// 终端日志 DEBUG - isLineBreak：最后一行是否添加换行
+public func JJC_Print<T>(_ log: T, file: String = #file, method: String = #function, line: Int = #line, isLineBreak: Bool = true) {
+    #if DEBUG
+    print("\(Date()) <\((file as NSString).lastPathComponent)> [\(line)] ---- \(method)：")
+    debugPrint(log)
+    if isLineBreak {
+        print()
+    }
+    #endif
+}
+
 /// 当前语言环境
 public func JJC_Language() -> String {
     return Bundle.main.preferredLocalizations.first ?? "en"
