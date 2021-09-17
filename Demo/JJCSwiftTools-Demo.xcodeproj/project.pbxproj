@@ -14,18 +14,18 @@
 		7DC64A5A26B01FF6001182FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DC64A5926B01FF6001182FB /* Assets.xcassets */; };
 		7DC64A5D26B01FF6001182FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC64A5B26B01FF6001182FB /* LaunchScreen.storyboard */; };
 		7DDFB01326F320B80039D6CD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7DDFB01526F320B80039D6CD /* Localizable.strings */; };
-		7DDFB04D26F43A3F0039D6CD /* JJCSwiftTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DDFB04C26F43A3F0039D6CD /* JJCSwiftTools.framework */; };
-		7DDFB04E26F43A3F0039D6CD /* JJCSwiftTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DDFB04C26F43A3F0039D6CD /* JJCSwiftTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7DDFB05126F48B060039D6CD /* JJCSwiftTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DDFB05026F48B060039D6CD /* JJCSwiftTools.framework */; };
+		7DDFB05226F48B060039D6CD /* JJCSwiftTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DDFB05026F48B060039D6CD /* JJCSwiftTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7DDFB04F26F43A3F0039D6CD /* Embed Frameworks */ = {
+		7DDFB05326F48B070039D6CD /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7DDFB04E26F43A3F0039D6CD /* JJCSwiftTools.framework in Embed Frameworks */,
+				7DDFB05226F48B060039D6CD /* JJCSwiftTools.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,6 +58,7 @@
 		7DDFB02726F421CD0039D6CD /* JJCSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JJCSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DDFB04526F42B540039D6CD /* JJCSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JJCSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DDFB04C26F43A3F0039D6CD /* JJCSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JJCSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DDFB05026F48B060039D6CD /* JJCSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JJCSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DDFB04D26F43A3F0039D6CD /* JJCSwiftTools.framework in Frameworks */,
+				7DDFB05126F48B060039D6CD /* JJCSwiftTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +116,7 @@
 		7DC64A6C26B02111001182FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7DDFB05026F48B060039D6CD /* JJCSwiftTools.framework */,
 				7DDFB04C26F43A3F0039D6CD /* JJCSwiftTools.framework */,
 				7DDFB04526F42B540039D6CD /* JJCSwiftTools.framework */,
 				7DDFB02726F421CD0039D6CD /* JJCSwiftTools.framework */,
@@ -139,7 +141,7 @@
 				7DC64A4926B01FF3001182FB /* Sources */,
 				7DC64A4A26B01FF3001182FB /* Frameworks */,
 				7DC64A4B26B01FF3001182FB /* Resources */,
-				7DDFB04F26F43A3F0039D6CD /* Embed Frameworks */,
+				7DDFB05326F48B070039D6CD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
