@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  JJCSwiftToolsBundle
+
+  Created by mxgx on 2021/7/29.
+  
+*/
+
+"Tips"      = "Lời khuyên";
+"Ensure"    = "Đảm bảo";
+"Cancel"    = "Hủy bỏ";

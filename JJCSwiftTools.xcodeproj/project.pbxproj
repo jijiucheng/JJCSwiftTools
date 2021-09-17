@@ -36,7 +36,6 @@
 		7DC64ADE26B24ED9001182FB /* JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64ADD26B24ED9001182FB /* JJCAPI.swift */; };
 		7DC64B2F26B29D5F001182FB /* JJCSwiftTools.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7DC64B2E26B29D5F001182FB /* JJCSwiftTools.bundle */; };
 		7DC64B4E26B2BDC0001182FB /* Root.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DC64B4C26B2BD92001182FB /* Root.plist */; };
-		7DC64B5126B39E0C001182FB /* JJCPrivateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64B5026B39E0C001182FB /* JJCPrivateAPI.swift */; };
 		7DC64B5826B7C80B001182FB /* Bundle+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64B5726B7C80B001182FB /* Bundle+JJCAPI.swift */; };
 		7DC64B5F26B80D64001182FB /* JJCEnumAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64B5E26B80D64001182FB /* JJCEnumAPI.swift */; };
 		7DC64B6226B80DC2001182FB /* JJCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64B6126B80DC2001182FB /* JJCButton.swift */; };
@@ -78,7 +77,6 @@
 		7DC64ADD26B24ED9001182FB /* JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCAPI.swift; sourceTree = "<group>"; };
 		7DC64B2E26B29D5F001182FB /* JJCSwiftTools.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JJCSwiftTools.bundle; sourceTree = "<group>"; };
 		7DC64B4C26B2BD92001182FB /* Root.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Root.plist; sourceTree = "<group>"; };
-		7DC64B5026B39E0C001182FB /* JJCPrivateAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCPrivateAPI.swift; sourceTree = "<group>"; };
 		7DC64B5726B7C80B001182FB /* Bundle+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+JJCAPI.swift"; sourceTree = "<group>"; };
 		7DC64B5E26B80D64001182FB /* JJCEnumAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCEnumAPI.swift; sourceTree = "<group>"; };
 		7DC64B6126B80DC2001182FB /* JJCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCButton.swift; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				7DC64B5E26B80D64001182FB /* JJCEnumAPI.swift */,
 				7D3B458326D0FB500037F09F /* JJCDevice.swift */,
 				7D3B458726D101040037F09F /* JJCAppInfo.swift */,
-				7DC64B5026B39E0C001182FB /* JJCPrivateAPI.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -297,7 +294,6 @@
 			files = (
 				7DC64B6526B80F7D001182FB /* JJCSegmentView.swift in Sources */,
 				7DC64A9C26B11793001182FB /* UIColor+JJCAPI.swift in Sources */,
-				7DC64B5126B39E0C001182FB /* JJCPrivateAPI.swift in Sources */,
 				7DC64ABD26B13902001182FB /* CALayer+JJCAPI.swift in Sources */,
 				7DC64AB326B13082001182FB /* UILabel+JJCAPI.swift in Sources */,
 				7DC64B7926B8E940001182FB /* JJCDataModelTool.swift in Sources */,
@@ -489,7 +485,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_dylib;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jijiucheng.JJCSwiftTools;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -521,7 +517,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_dylib;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jijiucheng.JJCSwiftTools;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
