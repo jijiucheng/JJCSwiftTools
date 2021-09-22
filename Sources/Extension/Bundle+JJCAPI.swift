@@ -89,6 +89,26 @@ extension Bundle {
         return tupleLanguages
     }
     
+    /// Bundle - 类方法 - 根据某一语言返回对应语言相关信息（同 jjc_languages 返回值）
+    public static func jjc_language(_ bundle: Bundle = Bundle.main, lproj: String) -> (String, String, String?, String?) {
+        let languages: [String] = bundle.localizations
+        let curLanguage: String = Bundle.jjc_language(bundle)
+        var tupleLanguage: (String, String, String?, String?) = (curLanguage,
+                                                                 curLanguage,
+                                                                 Locale(identifier: curLanguage).localizedString(forIdentifier: curLanguage),
+                                                                 Locale(identifier: curLanguage).localizedString(forIdentifier: curLanguage))
+        for language in languages {
+            if curLanguage == language {
+                tupleLanguage = (curLanguage,
+                                 language,
+                                 Locale(identifier: curLanguage).localizedString(forIdentifier: language),
+                                 Locale(identifier: language).localizedString(forIdentifier: language))
+                break
+            }
+        }
+        return tupleLanguage
+    }
+    
     /// Bundle - 类方法 - 获取当前语言环境（根据 Bundle 获取 lproj 的语言文件）
     /// - 参考链接：https://www.jianshu.com/p/1199cda9c61b
     public static func jjc_language(_ bundle: Bundle = Bundle.main) -> String {

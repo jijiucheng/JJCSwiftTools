@@ -184,6 +184,26 @@ public func JJC_Languages(_ bundle: Bundle = Bundle.main) -> [(String, String, S
     return tupleLanguages
 }
 
+/// JJCAPI - 本地语言 - 根据某一语言返回对应语言相关信息（同 jjc_languages 返回值）
+public func JJC_Language(_ bundle: Bundle = Bundle.main, lproj: String) -> (String, String, String?, String?) {
+    let languages: [String] = bundle.localizations
+    let curLanguage: String = Bundle.jjc_language(bundle)
+    var tupleLanguage: (String, String, String?, String?) = (curLanguage,
+                                                             curLanguage,
+                                                             Locale(identifier: curLanguage).localizedString(forIdentifier: curLanguage),
+                                                             Locale(identifier: curLanguage).localizedString(forIdentifier: curLanguage))
+    for language in languages {
+        if curLanguage == language {
+            tupleLanguage = (curLanguage,
+                             language,
+                             Locale(identifier: curLanguage).localizedString(forIdentifier: language),
+                             Locale(identifier: language).localizedString(forIdentifier: language))
+            break
+        }
+    }
+    return tupleLanguage
+}
+
 /// JJCAPI - 本地语言 - 带注释（根据 Bundle 获取 lproj 的语言文件）
 public func JJC_Local(_ key: String, _ comment: String? = nil, bundle: Bundle = Bundle.main, lproj: String? = nil) -> String {
     var newLproj: String = Bundle.jjc_language(bundle)
