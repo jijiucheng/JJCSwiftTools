@@ -116,7 +116,7 @@ public func JJC_Print<T>(_ log: T, file: String = #file, method: String = #funct
 }
 
 /// JJCAPI - 本地语言 - 获取当前语言环境（根据 Bundle 获取 lproj 的语言文件）
-public func jjc_language(_ bundle: Bundle = Bundle.main) -> String {
+public func JJC_Language(_ bundle: Bundle = Bundle.main) -> String {
     return JJCLocal.jjc_language(bundle)
 }
 
