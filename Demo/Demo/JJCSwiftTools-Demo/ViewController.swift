@@ -76,20 +76,17 @@ class ViewController: UIViewController {
         
         
         /// 测试语言系统
-        JJC_Print(Bundle.jjc_systemAllAvailableLanguages())
-        JJC_Print(Bundle.jjc_systemAllLanguages())
-        JJC_Print(Bundle.jjc_systemLanguagesName(showId: "zh-Hans", languageId: "en"))
+        JJC_Print(JJCLocal.jjc_systemAllAvailableLanguages())
+        JJC_Print(JJCLocal.jjc_systemAllLanguages())
+        JJC_Print(JJCLocal.jjc_languageName("zh-Hans", "en"))
         JJC_Print(Bundle.main.localizations)
-        JJC_Print(Locale.preferredLanguages)
         JJC_Print(UserDefaults.standard.value(forKey: "AppleLanguages"))
         JJC_Print(Bundle.main.preferredLocalizations)
-        
+
         JJC_Print(JJC_Local("Book", "书籍"))
-        JJC_Print(Bundle.jjc_local("Book", lproj: "zh-Hans"))
-        JJC_Print(Bundle.jjc_local("Book", lproj: "ja"))
-        JJC_Print(Bundle.jjc_local(byBundle: "Tips", bundleName: "JJCSwiftTools", objClass: JJCAppInfo.self, lproj: "zh-Hans"))
-        
-        JJC_Print(JJC_Languages())
+        JJC_Print(JJCLocal.jjc_local("Book", lproj: "zh-Hans"))
+        JJC_Print(JJCLocal.jjc_local("Book", lproj: "ja"))
+        JJC_Print(JJCLocal.jjc_local(byBundle: "Tips", bundleName: "JJCSwiftTools", objClass: JJCAppInfo.self, lproj: "zh-Hans"))
     }
     
     

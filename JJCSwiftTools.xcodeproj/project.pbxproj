@@ -23,7 +23,6 @@
 /* Begin PBXBuildFile section */
 		7D3B458426D0FB500037F09F /* JJCDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3B458326D0FB500037F09F /* JJCDevice.swift */; };
 		7D3B458826D101040037F09F /* JJCAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3B458726D101040037F09F /* JJCAppInfo.swift */; };
-		7DC64A3826B01EEB001182FB /* JJCSwiftTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DC64A3626B01EEB001182FB /* JJCSwiftTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DC64A7326B02153001182FB /* UIButton+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A7226B02153001182FB /* UIButton+JJCAPI.swift */; };
 		7DC64A7726B0F524001182FB /* UISearchBar+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A7626B0F524001182FB /* UISearchBar+JJCAPI.swift */; };
 		7DC64A7A26B0FBC6001182FB /* UIView+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A7926B0FBC6001182FB /* UIView+JJCAPI.swift */; };
@@ -44,6 +43,7 @@
 		7DC64B7526B8E55F001182FB /* JJCImageTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64B7426B8E55F001182FB /* JJCImageTitleModel.swift */; };
 		7DC64B7926B8E940001182FB /* JJCDataModelTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64B7826B8E940001182FB /* JJCDataModelTool.swift */; };
 		7DDFAFC326F039940039D6CD /* UIBarButtonItem+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDFAFC226F039940039D6CD /* UIBarButtonItem+JJCAPI.swift */; };
+		7DF03D6526FB00A300213BA3 /* JJCLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF03D6426FB00A300213BA3 /* JJCLocal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,7 +63,6 @@
 		7D3B458326D0FB500037F09F /* JJCDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCDevice.swift; sourceTree = "<group>"; };
 		7D3B458726D101040037F09F /* JJCAppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCAppInfo.swift; sourceTree = "<group>"; };
 		7DC64A3326B01EEB001182FB /* JJCSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JJCSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DC64A3626B01EEB001182FB /* JJCSwiftTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJCSwiftTools.h; sourceTree = "<group>"; };
 		7DC64A3726B01EEB001182FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DC64A7226B02153001182FB /* UIButton+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+JJCAPI.swift"; sourceTree = "<group>"; };
 		7DC64A7626B0F524001182FB /* UISearchBar+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+JJCAPI.swift"; sourceTree = "<group>"; };
@@ -85,6 +84,7 @@
 		7DC64B7426B8E55F001182FB /* JJCImageTitleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCImageTitleModel.swift; sourceTree = "<group>"; };
 		7DC64B7826B8E940001182FB /* JJCDataModelTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCDataModelTool.swift; sourceTree = "<group>"; };
 		7DDFAFC226F039940039D6CD /* UIBarButtonItem+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+JJCAPI.swift"; sourceTree = "<group>"; };
+		7DF03D6426FB00A300213BA3 /* JJCLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCLocal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,11 +130,11 @@
 		7DC64A3F26B01F0A001182FB /* General */ = {
 			isa = PBXGroup;
 			children = (
-				7DC64A3626B01EEB001182FB /* JJCSwiftTools.h */,
 				7DC64ADD26B24ED9001182FB /* JJCAPI.swift */,
 				7DC64B5E26B80D64001182FB /* JJCEnumAPI.swift */,
 				7D3B458326D0FB500037F09F /* JJCDevice.swift */,
 				7D3B458726D101040037F09F /* JJCAppInfo.swift */,
+				7DF03D6426FB00A300213BA3 /* JJCLocal.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -192,7 +192,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DC64A3826B01EEB001182FB /* JJCSwiftTools.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +301,7 @@
 				7D3B458426D0FB500037F09F /* JJCDevice.swift in Sources */,
 				7DC64ADE26B24ED9001182FB /* JJCAPI.swift in Sources */,
 				7DC64AC026B13AD0001182FB /* UIImage+JJCAPI.swift in Sources */,
+				7DF03D6526FB00A300213BA3 /* JJCLocal.swift in Sources */,
 				7D3B458826D101040037F09F /* JJCAppInfo.swift in Sources */,
 				7DC64B5F26B80D64001182FB /* JJCEnumAPI.swift in Sources */,
 				7DC64B7126B8E260001182FB /* JJCWebViewController.swift in Sources */,

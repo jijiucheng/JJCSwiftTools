@@ -115,136 +115,14 @@ public func JJC_Print<T>(_ log: T, file: String = #file, method: String = #funct
     #endif
 }
 
-/// JJCAPI - 当前语言（"en-CN"、"zh-Hans"、...）
-public func JJC_CurLanguage(_ isSystem: Bool) -> String {
-    if isSystem {
-        return Locale.preferredLanguages.first ?? "en"
-    } else {
-        return Bundle.main.localizations.first ?? "en"
-    }
-}
-
-/// JJCAPI - 本地语言 - 获取当前语言环境（App 内部预置语言）
-/// - 参考链接：https://www.jianshu.com/p/1199cda9c61b
-public func JJC_Language(_ bundle: Bundle = Bundle.main) -> String {
-    // 1、获取当前本地语言
-    let language = bundle.preferredLocalizations.first ?? "en"
-    var targetLanguage: String?
-    // 2、获取当前 bundle 文件中所有本地语言
-    let languages = bundle.localizations
-    // 3.1、先查询是否有完全同名语言文件
-    for string in languages {
-        if language == string {
-            targetLanguage = string
-            break
-        }
-    }
-    // 3.2、如果查询不到同名语言文件，则遍历查询获取第一个包含前缀的
-    if targetLanguage == nil {
-        for string in languages {
-            if language.hasPrefix(string) {
-                targetLanguage = string
-                break
-            }
-        }
-    }
-    // 3.3、如果仍查询不到相同前缀的，则取当前语言首字符（国家缩写）进行匹配
-    if targetLanguage == nil {
-        if let languageHasPre = language.components(separatedBy: "-").first {
-            for string in languages {
-                if string.hasPrefix(languageHasPre) {
-                    targetLanguage = string
-                    break
-                }
-            }
-        }
-    }
-    // 3.4、如果以上仍什么都查找不到，将其置为 en
-    return targetLanguage ?? "en"
-}
-
-/// JJCAPI - 本地语言 - 根据系统本地化指定语言获取当前 App 内置所有语言环境
-/// - 返回参数：[(当前内置语言编码 code, 语言编码 code, 当前语言下该语言编码名称, 该语言编码语言环境下该语言编码名称)]
-/**
- 例如：
- 1、当 App 内部设置为 zh-Hans 语言，则返回 [(zh-Hans, en, 英语, English), (zh-Hans, zh-Hans, 简体中文, 简体中文), (zh-Hans, zh-Hant, 繁体中文, 繁體中文), ...]；
- 2、当 App 内部设置为 en 语言，则返回 [(en, en, English, English), (en, zh-Hans, Chinese Smiplified, 简体中文), (en, zh-Hant, Chinese Traditional, 繁體中文), ...]；
- */
-public func JJC_Languages(_ bundle: Bundle = Bundle.main) -> [(String, String, String?, String?)] {
-    let languages: [String] = bundle.localizations
-    let curLanguage: String = JJC_Language(bundle)
-    var tupleLanguages = [(String, String, String?, String?)]()
-    for language in languages {
-        let tuple = (curLanguage,
-                     language,
-                     Locale(identifier: curLanguage).localizedString(forIdentifier: language),
-                     Locale(identifier: language).localizedString(forIdentifier: language))
-        tupleLanguages.append(tuple)
-    }
-    return tupleLanguages
-}
-
-/// JJCAPI - 本地语言 - 根据某一语言返回对应语言相关信息（同 jjc_languages 返回值）
-public func JJC_Language(_ bundle: Bundle = Bundle.main, lproj: String) -> (String, String, String?, String?) {
-    let languages: [String] = bundle.localizations
-    let curLanguage: String = Bundle.jjc_language(bundle)
-    var tupleLanguage: (String, String, String?, String?) = (curLanguage,
-                                                             curLanguage,
-                                                             Locale(identifier: curLanguage).localizedString(forIdentifier: curLanguage),
-                                                             Locale(identifier: curLanguage).localizedString(forIdentifier: curLanguage))
-    for language in languages {
-        if curLanguage == language {
-            tupleLanguage = (curLanguage,
-                             language,
-                             Locale(identifier: curLanguage).localizedString(forIdentifier: language),
-                             Locale(identifier: language).localizedString(forIdentifier: language))
-            break
-        }
-    }
-    return tupleLanguage
+/// JJCAPI - 本地语言 - 获取当前语言环境（根据 Bundle 获取 lproj 的语言文件）
+public func jjc_language(_ bundle: Bundle = Bundle.main) -> String {
+    return JJCLocal.jjc_language(bundle)
 }
 
 /// JJCAPI - 本地语言 - 带注释（根据 Bundle 获取 lproj 的语言文件）
 public func JJC_Local(_ key: String, _ comment: String? = nil, bundle: Bundle = Bundle.main, lproj: String? = nil) -> String {
-    var newLproj: String = Bundle.jjc_language(bundle)
-    if let tempLproj: String = lproj {
-        newLproj = tempLproj
-    }
-    if let lprojPath = bundle.path(forResource: newLproj, ofType: "lproj") {
-        if Bundle(path: lprojPath) != nil {
-            if let languageBundle = Bundle(path: bundle.path(forResource: newLproj, ofType: "lproj") ?? "") {
-                return languageBundle.localizedString(forKey: key, value: key, table: nil)
-            }
-        }
-    }
-    return NSLocalizedString(key, comment: comment ?? key)
-}
-
-/// JJCAPI - 本地语言 - 带注释（根据 Bundle 获取）
-/// - bundle 和 objClass 两个参数需同时传递，且 objClass 必须为对应 bundle 所在 Module 任一 class 对象
-public func JJC_Local(byBundle key: String, _ comment: String? = nil, bundleName: String? = nil, objClass: AnyClass? = nil, lproj: String? = nil) -> String {
-    if let newBundleName: String = bundleName, let newObjClass: AnyClass = objClass {
-        let bundlePath = Bundle(for: newObjClass).path(forResource: newBundleName, ofType: "bundle") ?? ""
-        if let mainBundle = Bundle(path: bundlePath) {
-            return Bundle.jjc_local(key, comment, bundle: mainBundle, lproj: lproj)
-        }
-    }
-    return NSLocalizedString(key, comment: comment ?? key)
-}
-
-/// JJCAPI - 本地语言 - 当前语言环境是否是中文
-/// - 返回参数一：是否是中文；
-/// - 返回参数二：当前语言环境
-public func JJC_IsChinese(_ bundle: Bundle = Bundle.main) -> (Bool, String) {
-    let preferredLang = Bundle.jjc_language(bundle)
-    switch String(describing: preferredLang) {
-    case "en-US", "en-CN":
-        return (false, preferredLang)
-    case "zh-Hans-US","zh-Hans-CN","zh-Hant-CN","zh-TW","zh-HK","zh-Hans","zh-Hant":
-        return (true, preferredLang)
-    default:
-        return (false, preferredLang)
-    }
+    return JJCLocal.jjc_local(key, comment, bundle: bundle, lproj: lproj)
 }
 
 /// 弹框 Alert - title、message、leftTitle、leftStyle、rightTitle、rightStyle、leftAction、rightAction
@@ -260,19 +138,19 @@ public func JJC_Alert(title: String? = nil,
                       lproj: String? = nil) -> UIAlertController {
     var newTitle: String? = nil
     if title != nil && (title ?? "").jjc_isEmptyOrInvalid() {
-        newTitle = JJC_Local(byBundle: "Tips", "温馨提示", bundleName: "JJCSwiftTools", objClass: JJCSwiftToolsBundles.self, lproj: lproj)
+        newTitle = JJCLocal.jjc_local(byBundle: "Tips", "温馨提示", bundleName: "JJCSwiftTools", objClass: JJCSwiftToolsBundles.self, lproj: lproj)
     }
     let alertVC = UIAlertController(title: newTitle, message: message, preferredStyle: .alert)
     if var newLeftTitle = leftTitle {
         if newLeftTitle.jjc_isEmptyOrInvalid() {
-            newLeftTitle = JJC_Local(byBundle: "Cancel", "取消", bundleName: "JJCSwiftTools", objClass: JJCSwiftToolsBundles.self, lproj: lproj)
+            newLeftTitle = JJCLocal.jjc_local(byBundle: "Cancel", "取消", bundleName: "JJCSwiftTools", objClass: JJCSwiftToolsBundles.self, lproj: lproj)
         }
         let leftAction = UIAlertAction(title: newLeftTitle, style: leftStyle ?? .cancel) { _ in leftAction?() }
         alertVC.addAction(leftAction)
     }
     if var newRightTitle = rightTitle {
         if newRightTitle.jjc_isEmptyOrInvalid() {
-            newRightTitle = JJC_Local(byBundle: "Ensure", "确定", bundleName: "JJCSwiftTools", objClass: JJCSwiftToolsBundles.self, lproj: lproj)
+            newRightTitle = JJCLocal.jjc_local(byBundle: "Ensure", "确定", bundleName: "JJCSwiftTools", objClass: JJCSwiftToolsBundles.self, lproj: lproj)
         }
         let rightAction = UIAlertAction(title: newRightTitle, style: rightStyle ?? .default) { _ in rightAction?() }
         alertVC.addAction(rightAction)
