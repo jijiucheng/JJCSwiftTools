@@ -115,6 +115,12 @@ public func JJC_Print<T>(_ log: T, file: String = #file, method: String = #funct
     #endif
 }
 
+/// JJJCAPI - 本地语言 - 获取当前手机系统语言【设置->通用->语言->首选语言顺序】
+/// - 此处也可以通过 UserDefaults.standard.value(forKey: "AppleLanguages") 获取
+public func JJC_systemLanguage() -> String {
+    return JJCLocal.jjc_systemLanguage()
+}
+
 /// JJCAPI - 本地语言 - 获取当前语言环境（根据 Bundle 获取 lproj 的语言文件）
 public func JJC_Language(_ bundle: Bundle = Bundle.main) -> String {
     return JJCLocal.jjc_language(bundle)
@@ -125,7 +131,7 @@ public func JJC_Local(_ key: String, _ comment: String? = nil, bundle: Bundle = 
     return JJCLocal.jjc_local(key, comment, bundle: bundle, lproj: lproj)
 }
 
-/// 弹框 Alert - title、message、leftTitle、leftStyle、rightTitle、rightStyle、leftAction、rightAction
+/// JJCAPI - 弹框 Alert - title、message、leftTitle、leftStyle、rightTitle、rightStyle、leftAction、rightAction
 fileprivate class JJCSwiftToolsBundles {}
 public func JJC_Alert(title: String? = nil,
                       message: String? = nil,
@@ -158,7 +164,7 @@ public func JJC_Alert(title: String? = nil,
     return alertVC
 }
 
-/// 圆角 - 继承 UIView - view、radius、width、color
+/// JJCAPI - 圆角 - 继承 UIView - view、radius、width、color
 public func JJC_RadiusBorder<T: UIView>(_ view: T, radius: CGFloat?, borderWidth: CGFloat?, borderColor: UIColor?) {
     if let newRadius = radius {
         view.layer.cornerRadius = newRadius
@@ -172,7 +178,7 @@ public func JJC_RadiusBorder<T: UIView>(_ view: T, radius: CGFloat?, borderWidth
     }
 }
 
-/// 圆角 - 继承 CALayer - layer、radius、width、color
+/// JJCAPI - 圆角 - 继承 CALayer - layer、radius、width、color
 public func JJC_RadiusBorder<T: CALayer>(_ layer: T, radius: CGFloat?, borderWidth: CGFloat?, borderColor: UIColor?) {
     if let newRadius = radius {
         layer.cornerRadius = newRadius
@@ -184,6 +190,11 @@ public func JJC_RadiusBorder<T: CALayer>(_ layer: T, radius: CGFloat?, borderWid
     if let newBorderColor = borderColor {
         layer.borderColor = newBorderColor.cgColor
     }
+}
+
+/// JJCAPI - 通知 Name
+public func JJC_NotiName(_ name: String) -> Notification.Name {
+    return Notification.Name(rawValue: name)
 }
 
 /// UUID

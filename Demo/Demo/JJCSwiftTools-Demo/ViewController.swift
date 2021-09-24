@@ -87,6 +87,9 @@ class ViewController: UIViewController {
         JJC_Print(JJCLocal.jjc_local("Book", lproj: "zh-Hans"))
         JJC_Print(JJCLocal.jjc_local("Book", lproj: "ja"))
         JJC_Print(JJCLocal.jjc_local(byBundle: "Tips", bundleName: "JJCSwiftTools", objClass: JJCAppInfo.self, lproj: "zh-Hans"))
+        JJC_Print(JJCLocal.jjc_languages())
+        JJC_Print(JJCLocal.jjc_language(lproj: "zh-Hans"))
+        JJC_Print(JJCLocal.jjc_language(lproj: "zh-Hans").localCode)
     }
     
     

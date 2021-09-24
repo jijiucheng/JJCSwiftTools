@@ -11,16 +11,21 @@ import Foundation
 public class JJCLocal: NSObject {
     
     /// JJCLocal - 定义语言返回参数
-    /// - 参数一：当前语言编码
-    /// - 参数二：指定语言编码
-    /// - 参数三：根据当前语言编码获取指定语言编码对应的语言名称
-    /// - 参数四：根据指定语言编码获取指定语言编码对应的语言名称
+    /// - localCode：当前语言编码
+    /// - code：指定语言编码
+    /// - showName：根据当前语言编码获取指定语言编码对应的语言名称
+    /// - name：根据指定语言编码获取指定语言编码对应的语言名称
+    /// - note：备注说明
     /**
      例如：
      1、当 App 内部设置为 zh-Hans 语言，则返回 [(zh-Hans, en, 英语, English), (zh-Hans, zh-Hans, 简体中文, 简体中文), (zh-Hans, zh-Hant, 繁体中文, 繁體中文), ...]；
      2、当 App 内部设置为 en 语言，则返回 [(en, en, English, English), (en, zh-Hans, Chinese Smiplified, 简体中文), (en, zh-Hant, Chinese Traditional, 繁體中文), ...]；
      */
-    public typealias JJCLanguageParams = (String, String, String?, String?)
+    public typealias JJCLanguageParams = (localCode: String,
+                                          code: String,
+                                          showName: String?,
+                                          name: String?,
+                                          note: String?)
 }
 
 // MARK:- Language
@@ -31,10 +36,16 @@ extension JJCLocal {
         return Locale.availableIdentifiers
     }
 
-    /// JJCLocal - 类方法 - 获取当前手机系统语言【设置->通用->语言->首选语言顺序】
+    /// JJCLocal - 类方法 - 获取当前手机系统已添加全部语言【设置->通用->语言->首选语言顺序】
     /// - 此处也可以通过 UserDefaults.standard.value(forKey: "AppleLanguages") 获取
     public static func jjc_systemAllLanguages() -> [String] {
         return Locale.preferredLanguages
+    }
+    
+    /// JJCLocal - 类方法 - 获取当前手机系统语言【设置->通用->语言->首选语言顺序】
+    /// - 此处也可以通过 UserDefaults.standard.value(forKey: "AppleLanguages") 获取
+    public static func jjc_systemLanguage() -> String {
+        return Locale.preferredLanguages.first ?? "en"
     }
     
     /// JJCLocal - 类方法 - 根据系统所有本地化标识符获取某语言显示对应语言名称（官方命名）
@@ -56,10 +67,11 @@ extension JJCLocal {
         let curLanguage: String = JJCLocal.jjc_language(bundle)
         var tupleLanguages = [JJCLanguageParams]()
         for language in languages {
-            let tuple = (curLanguage,
-                         language,
-                         Locale(identifier: curLanguage).localizedString(forIdentifier: language),
-                         Locale(identifier: language).localizedString(forIdentifier: language))
+            let tuple: JJCLanguageParams = (curLanguage,
+                                            language,
+                                            Locale(identifier: curLanguage).localizedString(forIdentifier: language),
+                                            Locale(identifier: language).localizedString(forIdentifier: language),
+                                            nil)
             tupleLanguages.append(tuple)
         }
         return tupleLanguages
@@ -69,16 +81,18 @@ extension JJCLocal {
     public static func jjc_language(_ bundle: Bundle = Bundle.main, lproj: String) -> JJCLanguageParams {
         let languages: [String] = bundle.localizations
         let curLanguage: String = JJCLocal.jjc_language(bundle)
-        var tupleLanguage: (String, String, String?, String?) = (curLanguage,
-                                                                 lproj,
-                                                                 Locale(identifier: curLanguage).localizedString(forIdentifier: lproj),
-                                                                 Locale(identifier: lproj).localizedString(forIdentifier: lproj))
+        var tupleLanguage: JJCLanguageParams = (curLanguage,
+                                                lproj,
+                                                Locale(identifier: curLanguage).localizedString(forIdentifier: lproj),
+                                                Locale(identifier: lproj).localizedString(forIdentifier: lproj),
+                                                nil)
         for language in languages {
             if curLanguage == language {
                 tupleLanguage = (curLanguage,
                                  lproj,
                                  Locale(identifier: curLanguage).localizedString(forIdentifier: lproj),
-                                 Locale(identifier: lproj).localizedString(forIdentifier: lproj))
+                                 Locale(identifier: lproj).localizedString(forIdentifier: lproj),
+                                 nil)
                 break
             }
         }

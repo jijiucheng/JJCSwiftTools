@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D9C76F026FDBBED00C25F36 /* JJCSwiftTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9C76EF26FDBBED00C25F36 /* JJCSwiftTools.framework */; };
+		7D9C76F126FDBBED00C25F36 /* JJCSwiftTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9C76EF26FDBBED00C25F36 /* JJCSwiftTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DC64A5126B01FF3001182FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A5026B01FF3001182FB /* AppDelegate.swift */; };
 		7DC64A5326B01FF3001182FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A5226B01FF3001182FB /* SceneDelegate.swift */; };
 		7DC64A5526B01FF3001182FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A5426B01FF3001182FB /* ViewController.swift */; };
@@ -14,18 +16,16 @@
 		7DC64A5A26B01FF6001182FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DC64A5926B01FF6001182FB /* Assets.xcassets */; };
 		7DC64A5D26B01FF6001182FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC64A5B26B01FF6001182FB /* LaunchScreen.storyboard */; };
 		7DDFB01326F320B80039D6CD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7DDFB01526F320B80039D6CD /* Localizable.strings */; };
-		7DF03D7126FB099D00213BA3 /* JJCSwiftTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF03D6A26FB068000213BA3 /* JJCSwiftTools.framework */; };
-		7DF03D7226FB099D00213BA3 /* JJCSwiftTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF03D6A26FB068000213BA3 /* JJCSwiftTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7DF03D7326FB099D00213BA3 /* Embed Frameworks */ = {
+		7D9C76F226FDBBED00C25F36 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7DF03D7226FB099D00213BA3 /* JJCSwiftTools.framework in Embed Frameworks */,
+				7D9C76F126FDBBED00C25F36 /* JJCSwiftTools.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,6 +38,7 @@
 		7D3B45A026D10AB80037F09F /* JJCSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JJCSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3B45F226D78CE80037F09F /* JJCSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JJCSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7A2D2626CA6FE70090D726 /* JJCSwiftTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JJCSwiftTools.framework; path = ../Products/JJCSwiftTools.framework; sourceTree = "<group>"; };
+		7D9C76EF26FDBBED00C25F36 /* JJCSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JJCSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB4DD5826D8BD0E00B33F2E /* JJCSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JJCSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC64A4D26B01FF3001182FB /* JJCSwiftTools-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JJCSwiftTools-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC64A5026B01FF3001182FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DF03D7126FB099D00213BA3 /* JJCSwiftTools.framework in Frameworks */,
+				7D9C76F026FDBBED00C25F36 /* JJCSwiftTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +119,7 @@
 		7DC64A6C26B02111001182FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D9C76EF26FDBBED00C25F36 /* JJCSwiftTools.framework */,
 				7DF03D6A26FB068000213BA3 /* JJCSwiftTools.framework */,
 				7DF03D6626FB061400213BA3 /* JJCSwiftTools.framework */,
 				7DDFB05026F48B060039D6CD /* JJCSwiftTools.framework */,
@@ -145,7 +147,7 @@
 				7DC64A4926B01FF3001182FB /* Sources */,
 				7DC64A4A26B01FF3001182FB /* Frameworks */,
 				7DC64A4B26B01FF3001182FB /* Resources */,
-				7DF03D7326FB099D00213BA3 /* Embed Frameworks */,
+				7D9C76F226FDBBED00C25F36 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
