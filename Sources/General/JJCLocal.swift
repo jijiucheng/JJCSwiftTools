@@ -171,7 +171,7 @@ extension JJCLocal {
     /// JJCLocal - 类方法 - 当前语言环境是否是中文
     /// - 返回参数一：是否是中文；
     /// - 返回参数二：当前语言环境
-    public static func jjc_isChinese(_ bundle: Bundle = Bundle.main) -> (Bool, String) {
+    public static func jjc_isChinese(_ bundle: Bundle = Bundle.main) -> (isChinese: Bool, language: String) {
         let preferredLang = JJCLocal.jjc_language(bundle)
         switch String(describing: preferredLang) {
         case "en-US", "en-CN":

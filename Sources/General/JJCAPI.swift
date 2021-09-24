@@ -39,18 +39,23 @@ public let JJC_IsIPad = (UIDevice.current.userInterfaceIdiom == .pad)
 public let JJC_IsCarPlay = (UIDevice.current.userInterfaceIdiom == .carPlay)
 
 /// JJCAPI - 系统信息 - App 唯一识别号
-public let JJC_BundleIdentifier = Bundle.main.object(forInfoDictionaryKey: "CFBundleIdentifier") as! String
+public let JJC_BundleIdentifier = Bundle.main.object(forInfoDictionaryKey: "CFBundleIdentifier") as? String ?? ""
 /// JJCAPI - 系统信息 - App 名称
-public let JJC_BundleDisplayName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as! String
+public let JJC_BundleDisplayName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? ""
 /// JJCAPI - 系统信息 - release version
-public let JJC_ReleaseVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+public let JJC_ReleaseVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
 /// JJCAPI - 系统信息 - debug version
-public let JJC_DebugVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
-/// JJCAPI - 系统信息
-public let JJC_Version = "\(JJC_ReleaseVersion)(\(JJC_DebugVersion))"
+public let JJC_DebugVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? ""
+/// JJCAPI - 系统信息 - releaseVersion + debugVersion）【CFBundleShortVersionString + CFBundleVersion】
+public let JJC_FullVersion = "\(JJC_ReleaseVersion)(\(JJC_DebugVersion))"
 
 
 // MARK:- 全局函数
+
+/// JJCAPI - 系统信息 - 版本 version 信息
+public func JJC_Version() -> (release: String, debug: String, full: String) {
+    return (JJC_ReleaseVersion, JJC_DebugVersion, JJC_FullVersion)
+}
 
 /// JJCAPI - 是否是刘海屏
 public func JJC_IsIPhoneX() -> Bool {

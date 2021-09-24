@@ -55,8 +55,15 @@ extension JJCAppInfo {
     }
     
     /// JJCDevice - 获取 App 版本号（releaseVersion + debugVersion）【CFBundleShortVersionString + CFBundleVersion】
-    public static func version() -> String {
+    public static func fullVersion() -> String {
         return "\(JJCAppInfo.releaseVersion())(\(JJCAppInfo.debugVersion()))"
+    }
+    
+    /// JJCDevice - 获取 App 版本号信息
+    public static func version() -> (release: String, debug: String, full: String) {
+        return (JJCAppInfo.releaseVersion(),
+                JJCAppInfo.debugVersion(),
+                JJCAppInfo.fullVersion())
     }
 }
 
