@@ -347,7 +347,7 @@ extension String {
             targetString = dataString
             let utf8String = "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=gb2312\" />"
             if dataString.contains(utf8String) {
-                let newUtf8String = utf8String.jjc_toUTF8String(true)
+                let newUtf8String = utf8String.jjc_toUTF8String()
                 if !newUtf8String.isEmpty {
                     targetString = targetString.replacingOccurrences(of: utf8String, with: newUtf8String)
                 }
