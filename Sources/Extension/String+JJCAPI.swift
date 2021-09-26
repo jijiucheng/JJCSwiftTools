@@ -296,7 +296,7 @@ extension String {
     }
     
     /// String - 实例方法 - 根据编码类型转编码
-    /// 参考链接：https://shino.space/2017/swift%E4%B8%ADUTF8%E4%B8%8EGBK%E7%9A%84%E8%BD%AC%E6%8D%A2/
+    /// - 参考链接：https://shino.space/2017/swift%E4%B8%ADUTF8%E4%B8%8EGBK%E7%9A%84%E8%BD%AC%E6%8D%A2/
     public func jjc_toEncodingString(_ encodingType: CFStringEncodings) -> String {
         let enc = String.jjc_getEncodingType(encodingType)
         var targetString = ""
@@ -327,7 +327,7 @@ extension String {
     }
     
     /// String - 实例方法 - 转 GBK_2312 编码
-    /// 参考链接：https://shino.space/2017/swift%E4%B8%ADUTF8%E4%B8%8EGBK%E7%9A%84%E8%BD%AC%E6%8D%A2/
+    /// - 参考链接：https://shino.space/2017/swift%E4%B8%ADUTF8%E4%B8%8EGBK%E7%9A%84%E8%BD%AC%E6%8D%A2/
     public func jjc_toEncodingStringWithGBK2312S() -> String {
         return jjc_toEncodingString(.GB_18030_2000)
     }
@@ -347,7 +347,7 @@ extension String {
             targetString = dataString
             let utf8String = "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=gb2312\" />"
             if dataString.contains(utf8String) {
-                let newUtf8String = utf8String.jjc_toUTF8String()
+                let newUtf8String = utf8String.jjc_toUTF8String(true)
                 if !newUtf8String.isEmpty {
                     targetString = targetString.replacingOccurrences(of: utf8String, with: newUtf8String)
                 }
@@ -358,34 +358,60 @@ extension String {
     
     /******************** GBK_2312 *****************/
     
-    /// String - 实例方法 - Base64 编码
-    public func jjc_toBase64Encode() -> String {
+    /// String - 实例方法 - Base64 编码、解码
+    /// - reverse：是否反向：
+    ///   - true  - 编码；
+    ///   - false - 解码。
+    public func jjc_toBase64String(_ reverse: Bool = true) -> String {
         var targetString = ""
-        if let encodeData = self.data(using: .utf8) {
-            targetString = encodeData.base64EncodedString(options: [])
-        }
-        return targetString
-    }
-    
-    /// String - 实例方法 - Base64 解码
-    public func jjc_toBase64Decode() -> String {
-        var targetString = ""
-        if let decodeData = Data(base64Encoded: self, options: []) {
-            if let decodeString = String(data: decodeData, encoding: .utf8) {
-                targetString = decodeString
+        if reverse {
+            if let encodeData = self.data(using: .utf8) {
+                targetString = encodeData.base64EncodedString(options: [])
+            }
+        } else {
+            if let decodeData = Data(base64Encoded: self, options: []) {
+                if let decodeString = String(data: decodeData, encoding: .utf8) {
+                    targetString = decodeString
+                }
             }
         }
         return targetString
     }
     
-    /// String - 实例方法 - 字符串 转 UTF-8（String -> UTF-8 String）
-    public func jjc_toUTF8String() -> String {
-        return self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+    /// String - 实例方法 - Unicode 编码、解码
+    /// - reverse：是否反向：
+    ///   - true  - 编码；
+    ///   - false - 解码。
+    /// - 参考链接：https://www.jianshu.com/p/ea99580ea30f
+    /// - 参考链接：https://www.jianshu.com/p/80903324fa19#comments
+    /// - 参考链接：https://stackoverflow.com/questions/24318171/using-swift-to-unescape-unicode-characters-ie-u1234
+    /// - 参考链接：https://blog.csdn.net/blueone009/article/details/50437145
+    /**
+     另外一种实现方案：
+     func unicodeString(_ str: String) -> String {
+         let mutableStr = NSMutableString(string: str) as CFMutableString
+         CFStringTransform(mutableStr, nil, "Any-Hex/Java" as CFString, true)
+         return mutableStr as String
+     }
+     */
+    public func jjc_toUnicodeString(_ reverse: Bool = true) -> String {
+        var targetString = self.replacingOccurrences(of: "\\U", with: "\\u")
+        targetString = targetString.applyingTransform(StringTransform(rawValue: "Any-Hex/Java"), reverse: !reverse) ?? ""
+        return targetString
     }
     
-    /// String - 实例方法 - UTF-8 转 字符串（UTF-8 String -> String）
-    public func jjc_toStringWithUTF8() -> String {
-        return self.removingPercentEncoding ?? ""
+    /// String - 实例方法 - 字符串 和 UTF-8 互转
+    /// - reverse：是否反向：
+    ///   - true  - 字符串 转 UTF-8（String -> UTF-8 String）；
+    ///   - false - UTF-8 转 字符串（UTF-8 String -> String）。
+
+    /// String - 实例方法 - 字符串 转 UTF-8（String -> UTF-8 String）
+    public func jjc_toUTF8String(_ reverse: Bool = true) -> String {
+        if reverse {
+            return self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        } else {
+            return self.removingPercentEncoding ?? ""
+        }
     }
 }
 
