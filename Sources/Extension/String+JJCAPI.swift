@@ -221,14 +221,14 @@ extension String {
         return (targetStringEnAll, targetStringEn, targetStringCn, targetStringNum)
     }
     
-    /// String - 类方法 - 获取当前时间（默认：yyyy-MM-dd HH:mm）
+    /// String - 类方法 - 获取当前时间（默认：yyyy-MM-dd HH:mm:ss）
     public static func jjc_curTimeString(_ dateFormat: String? = nil) -> String {
         var targetString = ""
         let dateFormatter = DateFormatter()
         if let newDateFormat = dateFormat {
             dateFormatter.dateFormat = newDateFormat
         } else {
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         }
         targetString = dateFormatter.string(from: Date())
         return targetString

@@ -91,6 +91,9 @@ class ViewController: UIViewController {
         JJC_Print(JJCLocal.jjc_language(lproj: "zh-Hans"))
         JJC_Print(JJCLocal.jjc_language(lproj: "zh-Hans").localCode)
         JJC_Print(("\\u5996\\u795e\\u8bb0" as String).jjc_toUnicodeString(false))
+        
+        let curTime = Date.jjc_curTime()
+        JJC_Print(curTime)
     }
     
     

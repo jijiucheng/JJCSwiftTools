@@ -23,6 +23,7 @@
 /* Begin PBXBuildFile section */
 		7D3B458426D0FB500037F09F /* JJCDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3B458326D0FB500037F09F /* JJCDevice.swift */; };
 		7D3B458826D101040037F09F /* JJCAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3B458726D101040037F09F /* JJCAppInfo.swift */; };
+		7D777FB8274F8EC600B81F1F /* Date+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D777FB7274F8EC600B81F1F /* Date+JJCAPI.swift */; };
 		7DC64A7326B02153001182FB /* UIButton+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A7226B02153001182FB /* UIButton+JJCAPI.swift */; };
 		7DC64A7726B0F524001182FB /* UISearchBar+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A7626B0F524001182FB /* UISearchBar+JJCAPI.swift */; };
 		7DC64A7A26B0FBC6001182FB /* UIView+JJCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC64A7926B0FBC6001182FB /* UIView+JJCAPI.swift */; };
@@ -62,6 +63,7 @@
 /* Begin PBXFileReference section */
 		7D3B458326D0FB500037F09F /* JJCDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCDevice.swift; sourceTree = "<group>"; };
 		7D3B458726D101040037F09F /* JJCAppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJCAppInfo.swift; sourceTree = "<group>"; };
+		7D777FB7274F8EC600B81F1F /* Date+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+JJCAPI.swift"; sourceTree = "<group>"; };
 		7DC64A3326B01EEB001182FB /* JJCSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JJCSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC64A3726B01EEB001182FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DC64A7226B02153001182FB /* UIButton+JJCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+JJCAPI.swift"; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				7DC64A7226B02153001182FB /* UIButton+JJCAPI.swift */,
 				7DC64A7626B0F524001182FB /* UISearchBar+JJCAPI.swift */,
 				7DC64B5726B7C80B001182FB /* Bundle+JJCAPI.swift */,
+				7D777FB7274F8EC600B81F1F /* Date+JJCAPI.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			files = (
 				7DC64B6526B80F7D001182FB /* JJCSegmentView.swift in Sources */,
 				7DC64A9C26B11793001182FB /* UIColor+JJCAPI.swift in Sources */,
+				7D777FB8274F8EC600B81F1F /* Date+JJCAPI.swift in Sources */,
 				7DC64ABD26B13902001182FB /* CALayer+JJCAPI.swift in Sources */,
 				7DC64AB326B13082001182FB /* UILabel+JJCAPI.swift in Sources */,
 				7DC64B7926B8E940001182FB /* JJCDataModelTool.swift in Sources */,
