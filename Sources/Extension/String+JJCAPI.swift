@@ -62,6 +62,16 @@ extension String {
     public func jjc_isVaildUrlWithHTTP() -> Bool {
         return String.jjc_isVaildUrlWithHTTP(self)
     }
+    
+    /// String - 实例方法 - 判断字符串是否包含中文
+    public func jjc_isContainsChinese() -> Bool {
+        for char in self {
+            if char >= "\u{4E00}" && char <= "\u{9FA5}" {
+                return true
+            }
+        }
+        return false
+    }
 }
 
 // MARK:- String 字符串截取、替换、移除

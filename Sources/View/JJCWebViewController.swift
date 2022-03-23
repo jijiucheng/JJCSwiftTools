@@ -20,9 +20,20 @@ public class JJCWebViewController: UIViewController {
     private let WebViewGoBackObserveKey: String = "canGoBack"
     
     /// WKWebView
-    public var webView = WKWebView()
+    public var webView: WKWebView = {
+        let webV = WKWebView()
+        webV.frame = CGRect(x: 0, y: JJC_StatusNaviH(), width: JJC_ScreenW, height: JJC_ScreenH - JJC_StatusNaviH())
+        webV.allowsBackForwardNavigationGestures = true
+        return webV
+    }()
     /// UIProgressView - 进度条
-    public var progressV = UIProgressView()
+    public var progressV: UIProgressView = {
+        let progressV = UIProgressView()
+        progressV.frame = CGRect(x: 0, y: JJC_StatusNaviH(), width: JJC_ScreenW, height: 2)
+        progressV.trackTintColor = .clear
+        progressV.progressTintColor = .orange
+        return progressV
+    }()
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,10 +56,8 @@ extension JJCWebViewController {
     private func setUI() {
         
         // WKWebView
-        self.webView.frame = CGRect(x: 0, y: JJC_StatusNaviH(), width: JJC_ScreenW, height: JJC_ScreenH - JJC_StatusNaviH())
         self.webView.navigationDelegate = self
         self.webView.uiDelegate = self
-        self.webView.allowsBackForwardNavigationGestures = true
         view.addSubview(self.webView)
         
         // 添加观察者
@@ -58,9 +67,6 @@ extension JJCWebViewController {
         self.webView.addObserver(self, forKeyPath: WebViewGoBackObserveKey, options: .new, context: nil)
         
         // UIProgressView - 进度条
-        self.progressV.frame = CGRect(x: 0, y: JJC_StatusNaviH(), width: JJC_ScreenW, height: 2)
-        self.progressV.trackTintColor = .clear
-        self.progressV.progressTintColor = .orange
         view.insertSubview(self.progressV, aboveSubview: self.webView)
     }
 }
