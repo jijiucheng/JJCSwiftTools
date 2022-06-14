@@ -206,3 +206,67 @@ public func JJC_NotiName(_ name: String) -> Notification.Name {
 public func JJC_UUID() -> String {
     return Bundle.main.bundleIdentifier ?? "" + "_" + UUID().uuidString
 }
+
+/// 获取当前控制器视图 UIViewController
+public func JJC_CurViewController() -> UIViewController {
+    // 定义一个变量存放当前屏幕显示的 viewController
+    var currentVC = UIViewController()
+    // 得到当前应用程序的主窗口（需要在 viewDidLoad 加载完成才会有值）
+    var keyWindow = UIApplication.shared.windows[0]
+    
+    // windowLevel 是在 Z轴方向上的窗口位置，默认值是 UIWindowLevel
+    if keyWindow.windowLevel != UIWindow.Level.normal {
+        // 获取应用程序的所有窗口并进行遍历
+        for window in UIApplication.shared.windows {
+            // 找到程序的默认窗口（正在显示的窗口）
+            if window.windowLevel == UIWindow.Level.normal {
+                // 将关键窗口赋值为默认窗口
+                keyWindow = window
+                break
+            }
+        }
+    }
+    
+    // 根据获取到的主窗口获取当前根控制器，并判断是否存在
+    if let rootVC = keyWindow.rootViewController {
+        // 获取窗口的当前显示图，并判断是否存在
+        if let frontView = keyWindow.subviews.first {
+            // 获取视图的下一个响应者，UIView 视图调用这个方法的返回值为 UIViewController 或它的父视图
+            var nextResponder = frontView.next
+            
+            // 判断显示视图的下一个响应者是否为一个 UITabBarController 的类对象
+            if rootVC.isKind(of: UITabBarController.self) {
+                nextResponder = rootVC
+            }
+            // 判断显示视图的下一个响应者是否为一个 UIViewController 的类对象
+            if var presetedVC = rootVC.presentedViewController {
+                while (presetedVC.presentedViewController != nil) {
+                    presetedVC = presetedVC.presentedViewController!
+                }
+                nextResponder = presetedVC
+            }
+            
+            if (nextResponder?.isKind(of: UITabBarController.self)) ?? false {
+                let tabBarVC = nextResponder as! UITabBarController
+                if let viewControllers = tabBarVC.viewControllers {
+                    let naviVC = viewControllers[tabBarVC.selectedIndex]
+                    if let lastVC = naviVC.children.last {
+                        currentVC = lastVC
+                    }
+                }
+            } else if (nextResponder?.isKind(of: UINavigationController.self)) ?? false {
+                let naviVC = nextResponder as! UINavigationController
+                if let lastVC = naviVC.children.last {
+                    currentVC = lastVC
+                }
+            } else {
+                if (nextResponder?.isKind(of: UIView.self)) ?? false {
+                    
+                } else {
+                    currentVC = nextResponder as! UIViewController
+                }
+            }
+        }
+    }
+    return currentVC
+}
